@@ -17,6 +17,7 @@ import argparse
 import json
 import pathlib
 import sys
+import urllib.parse
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
 from atlas.emit import write_harvest
@@ -41,15 +42,19 @@ def _load(source):
 
 def to_statement(name, decl):
     doc_link = decl["docLink"]
-    page = doc_link.split("#")[0]
+    page, _, anchor = doc_link.partition("#")
     module = page.lstrip("./").removesuffix(".html").replace("/", ".")
+    source_url = DOCS_BASE + page.lstrip("./")
+    if anchor:
+        # mathlib names routinely contain unicode (subscripts etc.) — encode.
+        source_url += "#" + urllib.parse.quote(anchor)
     return {
         "library": "mathlib",
         "native_name": name,
         "kind": _KINDS.get(str(decl.get("kind", "")).lower(), "other"),
         "statement_text": None,  # doc-gen4 declaration export carries no statement text
         "module": module or None,
-        "source_url": DOCS_BASE + doc_link.lstrip("./"),
+        "source_url": source_url,
         "subject_codes": [],
     }
 
@@ -57,7 +62,14 @@ def to_statement(name, decl):
 def harvest(source=DEFAULT_SOURCE, out_dir="out/mathlib"):
     data = _load(source)
     decls = data["declarations"]
-    rows = (to_statement(name, decl) for name, decl in decls.items())
+    rows = []
+    skipped = 0
+    for name, decl in decls.items():
+        if not decl.get("docLink"):
+            skipped += 1
+            continue
+        rows.append(to_statement(name, decl))
+    print(f"skipped {skipped} entries without docLink", file=sys.stderr)
     return write_harvest(out_dir, "mathlib", rows,
                          harvester_version=HARVESTER_VERSION,
                          source_version="mathlib4_docs declaration-data",

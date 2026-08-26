@@ -26,10 +26,12 @@ def parse_mm(lines):
             if "$)" in line:
                 in_comment = False
                 block = "\n".join(comment_buf)
-                if "#*#*" in block:
+                # set.mm has TWO banner styles: #*#* (coarse Part) and =-=-
+                # (finer Section). Last banner seen wins — document order.
+                if "#*#*" in block or "=-=-" in block:
                     for cand in block.splitlines():
                         t = cand.strip().strip("$()").strip()
-                        if t and "#*" not in t:
+                        if t and "#*" not in t and "=-" not in t:
                             section = t
                             break
             continue
@@ -49,6 +51,8 @@ def parse_mm(lines):
                 yield _row(label, kc, " ".join(head.split()), section)
             else:
                 pending = (label, kc, [head])
+    if pending is not None or in_comment:
+        raise ValueError("unterminated construct at EOF")
 
 
 def _row(label, kind_char, math, section):

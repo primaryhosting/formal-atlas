@@ -19,6 +19,9 @@
     "AddChar.map_zero_eq_one": {
       "docLink": "./Mathlib/Algebra/Group/AddChar.html#AddChar.map_zero_eq_one",
       "kind": "theorem"
+    },
+    "Broken.no_doclink": {
+      "kind": "theorem"
     }
   }
 }

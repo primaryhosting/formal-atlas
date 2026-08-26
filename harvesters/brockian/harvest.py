@@ -45,7 +45,10 @@ def harvest(source=DEFAULT_SOURCE, out_dir="out/brockian"):
     data = _load(source)
     if data.get("schema") != "brockian-public-verified-registry/v1":
         raise SystemExit(f"unexpected registry schema: {data.get('schema')!r}")
-    rows = [to_statement(e) for e in data["theorems"]
+    theorems = data.get("theorems")
+    if theorems is None:
+        raise SystemExit("registry missing 'theorems' key")
+    rows = [to_statement(e) for e in theorems
             if e.get("register") == "PROVED" and e.get("axioms_ok") and e.get("sorry_free")]
     return write_harvest(out_dir, "brockian", rows,
                          harvester_version=HARVESTER_VERSION,
