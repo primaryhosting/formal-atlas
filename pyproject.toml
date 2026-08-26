@@ -1,0 +1,12 @@
+[project]
+name = "formal-atlas"
+version = "0.0.1"
+description = "Harvest pipeline for the Formal Atlas — a living map of machine-verified mathematics"
+requires-python = ">=3.11"
+dependencies = ["requests>=2.31", "pyyaml>=6.0", "jsonschema>=4.21"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
