@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/primaryhosting/formal-atlas/schema/statement.schema.json",
+  "title": "Atlas normalized statement",
+  "type": "object",
+  "required": ["library", "native_name", "kind", "source_url"],
+  "additionalProperties": false,
+  "properties": {
+    "library":        {"type": "string", "enum": ["brockian", "metamath", "mathlib", "afp", "coq", "hollight", "mizar"]},
+    "native_name":    {"type": "string", "minLength": 1},
+    "kind":           {"type": "string", "enum": ["theorem", "definition", "axiom", "lemma", "corollary", "other"]},
+    "statement_text": {"type": ["string", "null"]},
+    "module":         {"type": ["string", "null"]},
+    "source_url":     {"type": "string", "pattern": "^https://"},
+    "subject_codes":  {"type": "array", "items": {"type": "string"}, "default": []}
+  }
+}

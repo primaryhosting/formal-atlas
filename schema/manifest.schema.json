@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/primaryhosting/formal-atlas/schema/manifest.schema.json",
+  "title": "Atlas harvest manifest",
+  "type": "object",
+  "required": ["library", "harvester_version", "source_version", "statement_count", "harvested_at", "sha256"],
+  "additionalProperties": false,
+  "properties": {
+    "library":           {"type": "string"},
+    "harvester_version": {"type": "string"},
+    "source_version":    {"type": "string", "description": "upstream commit/etag/date identifying what was harvested"},
+    "statement_count":   {"type": "integer", "minimum": 0},
+    "harvested_at":      {"type": "string", "format": "date-time"},
+    "sha256":            {"type": "string", "description": "checksum of statements.jsonl"},
+    "subject_derivation": {"type": ["string", "null"], "description": "how subject_codes were derived for this library"}
+  }
+}
