@@ -23,7 +23,7 @@ def write_harvest(out_dir, library, statements, *, harvester_version, source_ver
     validator = jsonschema.Draft202012Validator(_STMT_SCHEMA)
     seen = set()
     lines = []
-    for s in statements:
+    for s in sorted(statements, key=lambda s: s["native_name"]):
         validator.validate(s)
         if s["library"] != library:
             raise ValueError(f"statement library {s['library']!r} != harvest library {library!r}")
@@ -32,7 +32,7 @@ def write_harvest(out_dir, library, statements, *, harvester_version, source_ver
         seen.add(s["native_name"])
         lines.append(json.dumps(s, ensure_ascii=False, sort_keys=True))
     blob = ("\n".join(lines) + "\n") if lines else ""
-    (out_dir / "statements.jsonl").write_text(blob, encoding="utf-8")
+    (out_dir / "statements.jsonl").write_text(blob, encoding="utf-8", newline="")
     manifest = {
         "library": library,
         "harvester_version": harvester_version,
@@ -43,5 +43,5 @@ def write_harvest(out_dir, library, statements, *, harvester_version, source_ver
         "subject_derivation": subject_derivation,
     }
     jsonschema.Draft202012Validator(_MAN_SCHEMA).validate(manifest)
-    (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8", newline="")
     return manifest
