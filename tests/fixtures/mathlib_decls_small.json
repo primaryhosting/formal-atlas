@@ -1,0 +1,24 @@
+{
+  "declarations": {
+    "ADEInequality.A": {
+      "docLink": "./Mathlib/NumberTheory/ADEInequality.html#ADEInequality.A",
+      "kind": "def"
+    },
+    "ADEInequality.Admissible": {
+      "docLink": "./Mathlib/NumberTheory/ADEInequality.html#ADEInequality.Admissible",
+      "kind": "def"
+    },
+    "ADEInequality.Admissible.one_lt_sumInv": {
+      "docLink": "./Mathlib/NumberTheory/ADEInequality.html#ADEInequality.Admissible.one_lt_sumInv",
+      "kind": "theorem"
+    },
+    "AddChar.instFunLike": {
+      "docLink": "./Mathlib/Algebra/Group/AddChar.html#AddChar.instFunLike",
+      "kind": "instance"
+    },
+    "AddChar.map_zero_eq_one": {
+      "docLink": "./Mathlib/Algebra/Group/AddChar.html#AddChar.map_zero_eq_one",
+      "kind": "theorem"
+    }
+  }
+}
