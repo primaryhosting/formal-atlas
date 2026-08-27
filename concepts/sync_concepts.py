@@ -68,7 +68,7 @@ def sync_file(path, supabase_url, service_key):
                    "statement_id": stmts[0]["id"],
                    "tier": alignment["tier"],
                    "evidence": alignment.get("evidence", {}),
-                   "created_by": "seed:wiedijk100"}],
+                   "created_by": f"seed:{seed_source}"}],
                  prefer="resolution=merge-duplicates,return=minimal")
             synced += 1
     return synced, pending
