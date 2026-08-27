@@ -4,7 +4,8 @@ concepts:
 - slug: wiedijk-001-the-irrationality-of-the-square-root-of-2
   title: The Irrationality of the Square Root of 2
   wiedijk_number: 1
-  informal_statement: null
+  informal_statement: 'The square root of 2 is irrational: there is no rational number
+    p/q whose square equals 2.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -17,7 +18,9 @@ concepts:
 - slug: wiedijk-002-fundamental-theorem-of-algebra
   title: Fundamental Theorem of Algebra
   wiedijk_number: 2
-  informal_statement: null
+  informal_statement: Every non-constant polynomial with complex coefficients has
+    a root in the complex numbers. Equivalently, every complex polynomial of degree
+    n ≥ 1 factors into exactly n linear factors over ℂ.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -30,7 +33,8 @@ concepts:
 - slug: wiedijk-003-the-denumerability-of-the-rational-numbers
   title: The Denumerability of the Rational Numbers
   wiedijk_number: 3
-  informal_statement: null
+  informal_statement: 'The set of rational numbers is countably infinite: there is
+    a bijection between ℚ and the natural numbers.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -43,7 +47,10 @@ concepts:
 - slug: wiedijk-004-pythagorean-theorem
   title: Pythagorean Theorem
   wiedijk_number: 4
-  informal_statement: null
+  informal_statement: In a right triangle, the square of the length of the hypotenuse
+    equals the sum of the squares of the lengths of the two legs. Conversely, if the
+    side lengths of a triangle satisfy this relation, the angle opposite the longest
+    side is a right angle.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -56,21 +63,28 @@ concepts:
 - slug: wiedijk-005-prime-number-theorem
   title: Prime Number Theorem
   wiedijk_number: 5
-  informal_statement: null
+  informal_statement: 'The number π(x) of primes not exceeding x is asymptotic to
+    x/log x: the ratio π(x)·(log x)/x tends to 1 as x → ∞.'
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-006-g-del-s-incompleteness-theorem
   title: Gödel’s Incompleteness Theorem
   wiedijk_number: 6
-  informal_statement: null
+  informal_statement: 'Every consistent, effectively axiomatizable formal theory strong
+    enough to express elementary arithmetic is incomplete: there is a sentence in
+    its language that the theory neither proves nor refutes. Moreover, no such theory
+    can prove its own consistency.'
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-007-law-of-quadratic-reciprocity
   title: Law of Quadratic Reciprocity
   wiedijk_number: 7
-  informal_statement: null
+  informal_statement: For distinct odd primes p and q, the Legendre symbols satisfy
+    (p/q)(q/p) = (−1)^((p−1)/2 · (q−1)/2). Consequently p is a quadratic residue modulo
+    q if and only if q is a quadratic residue modulo p, except when p ≡ q ≡ 3 (mod
+    4), in which case exactly one of the two is a residue of the other.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -89,14 +103,19 @@ concepts:
 - slug: wiedijk-008-the-impossibility-of-trisecting-the-angle-and-doubling-the-cube
   title: The Impossibility of Trisecting the Angle and Doubling the Cube
   wiedijk_number: 8
-  informal_statement: null
+  informal_statement: There is no straightedge-and-compass construction that trisects
+    an arbitrary given angle, and none that constructs the side of a cube with twice
+    the volume of a given cube. In particular, the angle of 60° cannot be trisected
+    and the length ∛2 is not constructible, since each would require constructing
+    a number of degree 3 over ℚ, while every constructible number has degree a power
+    of 2.
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-009-the-area-of-a-circle
   title: The Area of a Circle
   wiedijk_number: 9
-  informal_statement: null
+  informal_statement: The area of a disc of radius r is πr².
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -109,7 +128,9 @@ concepts:
 - slug: wiedijk-010-euler-s-generalization-of-fermat-s-little-theorem
   title: Euler’s Generalization of Fermat’s Little Theorem
   wiedijk_number: 10
-  informal_statement: null
+  informal_statement: If n is a positive integer and a is an integer coprime to n,
+    then a^φ(n) ≡ 1 (mod n), where φ(n) is Euler's totient function, the number of
+    integers in {1, …, n} coprime to n.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -122,7 +143,7 @@ concepts:
 - slug: wiedijk-011-the-infinitude-of-primes
   title: The Infinitude of Primes
   wiedijk_number: 11
-  informal_statement: null
+  informal_statement: There are infinitely many prime numbers.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -135,21 +156,26 @@ concepts:
 - slug: wiedijk-012-the-independence-of-the-parallel-postulate
   title: The Independence of the Parallel Postulate
   wiedijk_number: 12
-  informal_statement: null
+  informal_statement: 'Euclid''s parallel postulate can be neither proved nor refuted
+    from the remaining axioms of Euclidean geometry: there are models of those axioms
+    in which the postulate holds (the Euclidean plane) and models in which it fails
+    (the hyperbolic plane).'
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-013-polyhedron-formula
   title: Polyhedron Formula
   wiedijk_number: 13
-  informal_statement: null
+  informal_statement: For every convex polyhedron with V vertices, E edges, and F
+    faces, V − E + F = 2.
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-014-euler-s-summation-of-1-1-2-2-1-3-2
   title: Euler’s Summation of 1 + (1/2)^2 + (1/3)^2 + ….
   wiedijk_number: 14
-  informal_statement: null
+  informal_statement: 'The sum of the reciprocals of the squares of the positive integers
+    equals π²/6: that is, 1 + 1/2² + 1/3² + ⋯ = π²/6.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -162,7 +188,9 @@ concepts:
 - slug: wiedijk-015-fundamental-theorem-of-integral-calculus
   title: Fundamental Theorem of Integral Calculus
   wiedijk_number: 15
-  informal_statement: null
+  informal_statement: If f is continuous on [a, b], then the function x ↦ ∫ₐˣ f(t)
+    dt is differentiable on [a, b] with derivative f. Consequently, if F is any antiderivative
+    of f on [a, b], then ∫ₐᵇ f(t) dt = F(b) − F(a).
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -181,7 +209,10 @@ concepts:
 - slug: wiedijk-016-insolvability-of-general-higher-degree-equations-abel-ruffini-theorem
   title: Insolvability of General Higher Degree Equations (Abel-Ruffini Theorem)
   wiedijk_number: 16
-  informal_statement: null
+  informal_statement: 'There is no general solution in radicals for polynomial equations
+    of degree five or higher: for every n ≥ 5 there exists a polynomial of degree
+    n with rational coefficients having a root that cannot be expressed from the rationals
+    using field operations and the extraction of roots.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -194,7 +225,8 @@ concepts:
 - slug: wiedijk-017-de-moivre-s-formula
   title: De Moivre’s Formula
   wiedijk_number: 17
-  informal_statement: null
+  informal_statement: For every real number x and every integer n, (cos x + i sin
+    x)ⁿ = cos nx + i sin nx.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -207,7 +239,12 @@ concepts:
 - slug: wiedijk-018-liouville-s-theorem-and-the-construction-of-transcendental-numbers
   title: Liouville’s Theorem and the Construction of Transcendental Numbers
   wiedijk_number: 18
-  informal_statement: null
+  informal_statement: If α is an irrational algebraic number of degree n, then there
+    is a constant c > 0 such that |α − p/q| > c/qⁿ for all integers p and q with q
+    ≥ 1; algebraic numbers thus cannot be approximated by rationals to arbitrarily
+    high order. Consequently any number admitting such approximations is transcendental
+    — in particular the Liouville constant ∑ₖ 10^(−k!) is transcendental, giving an
+    explicit transcendental number.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -220,7 +257,7 @@ concepts:
 - slug: wiedijk-019-four-squares-theorem
   title: Four Squares Theorem
   wiedijk_number: 19
-  informal_statement: null
+  informal_statement: Every natural number is the sum of four squares of integers.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -233,7 +270,8 @@ concepts:
 - slug: wiedijk-020-all-primes-1-mod-4-equal-the-sum-of-two-squares
   title: All Primes (1 mod 4) Equal the Sum of Two Squares
   wiedijk_number: 20
-  informal_statement: null
+  informal_statement: Every prime number congruent to 1 modulo 4 is the sum of two
+    squares of integers.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -246,14 +284,18 @@ concepts:
 - slug: wiedijk-021-green-s-theorem
   title: Green’s Theorem
   wiedijk_number: 21
-  informal_statement: null
+  informal_statement: If C is a positively oriented, piecewise-smooth simple closed
+    curve in the plane bounding a region D, and P and Q have continuous partial derivatives
+    on an open set containing D, then ∮_C (P dx + Q dy) = ∬_D (∂Q/∂x − ∂P/∂y) dA.
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-022-the-non-denumerability-of-the-continuum
   title: The Non-Denumerability of the Continuum
   wiedijk_number: 22
-  informal_statement: null
+  informal_statement: 'The set of real numbers is uncountable: there is no surjection
+    from the natural numbers onto ℝ, so the cardinality of the continuum strictly
+    exceeds ℵ₀.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -266,7 +308,10 @@ concepts:
 - slug: wiedijk-023-formula-for-pythagorean-triples
   title: Formula for Pythagorean Triples
   wiedijk_number: 23
-  informal_statement: null
+  informal_statement: Every primitive Pythagorean triple — coprime positive integers
+    x, y, z with x² + y² = z² — is given, after possibly interchanging x and y, by
+    x = m² − n², y = 2mn, z = m² + n² for coprime integers m > n > 0 of opposite parity.
+    Every Pythagorean triple is an integer multiple of a primitive one.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -279,14 +324,18 @@ concepts:
 - slug: wiedijk-024-the-independence-of-the-continuum-hypothesis
   title: The Independence of the Continuum Hypothesis
   wiedijk_number: 24
-  informal_statement: null
+  informal_statement: 'The continuum hypothesis — the assertion that no cardinal lies
+    strictly between ℵ₀ and 2^ℵ₀ — can be neither proved nor refuted from the axioms
+    of ZFC, provided ZFC is consistent: both ZFC together with CH and ZFC together
+    with its negation are consistent.'
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-025-schroeder-bernstein-theorem
   title: Schroeder-Bernstein Theorem
   wiedijk_number: 25
-  informal_statement: null
+  informal_statement: If there is an injection from a set A into a set B and an injection
+    from B into A, then there is a bijection between A and B.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -299,7 +348,8 @@ concepts:
 - slug: wiedijk-026-leibniz-s-series-for-pi
   title: Leibniz’s Series for Pi
   wiedijk_number: 26
-  informal_statement: null
+  informal_statement: The alternating series 1 − 1/3 + 1/5 − 1/7 + ⋯ = ∑_{k=0}^{∞}
+    (−1)^k/(2k+1) converges to π/4.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -312,7 +362,8 @@ concepts:
 - slug: wiedijk-027-sum-of-the-angles-of-a-triangle
   title: Sum of the Angles of a Triangle
   wiedijk_number: 27
-  informal_statement: null
+  informal_statement: In the Euclidean plane, the three interior angles of any triangle
+    sum to π radians (180 degrees).
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -325,21 +376,27 @@ concepts:
 - slug: wiedijk-028-pascal-s-hexagon-theorem
   title: Pascal’s Hexagon Theorem
   wiedijk_number: 28
-  informal_statement: null
+  informal_statement: If six points lie on a conic and are joined in order to form
+    a hexagon, then the three points of intersection of the three pairs of opposite
+    sides are collinear.
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-029-feuerbach-s-theorem
   title: Feuerbach’s Theorem
   wiedijk_number: 29
-  informal_statement: null
+  informal_statement: The nine-point circle of a triangle is internally tangent to
+    the incircle and externally tangent to each of the three excircles.
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-030-the-ballot-problem
   title: The Ballot Problem
   wiedijk_number: 30
-  informal_statement: null
+  informal_statement: In an election in which candidate A receives p votes and candidate
+    B receives q votes with p > q, the probability that A is strictly ahead of B throughout
+    the counting of the ballots, when the ballots are counted in a uniformly random
+    order, is (p − q)/(p + q).
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -352,28 +409,39 @@ concepts:
 - slug: wiedijk-031-ramsey-s-theorem
   title: Ramsey’s Theorem
   wiedijk_number: 31
-  informal_statement: null
+  informal_statement: For any positive integers r and s, there exists a least integer
+    R(r, s) such that every red–blue coloring of the edges of the complete graph on
+    R(r, s) vertices contains a red complete subgraph on r vertices or a blue complete
+    subgraph on s vertices; more generally, for any number of colors and any prescribed
+    clique sizes, a sufficiently large complete graph edge-colored with those colors
+    contains a monochromatic clique of the prescribed size in some color.
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-032-the-four-color-problem
   title: The Four Color Problem
   wiedijk_number: 32
-  informal_statement: null
+  informal_statement: 'Every planar graph is 4-colorable: the vertices of any graph
+    that can be drawn in the plane without edge crossings can be assigned one of four
+    colors so that adjacent vertices receive different colors. Equivalently, the regions
+    of any planar map can be colored with at most four colors so that regions sharing
+    a boundary segment have different colors.'
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-033-fermat-s-last-theorem
   title: Fermat’s Last Theorem
   wiedijk_number: 33
-  informal_statement: null
+  informal_statement: For every integer n > 2, the equation x^n + y^n = z^n has no
+    solution in positive integers x, y, z.
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-034-divergence-of-the-harmonic-series
   title: Divergence of the Harmonic Series
   wiedijk_number: 34
-  informal_statement: null
+  informal_statement: 'The harmonic series 1 + 1/2 + 1/3 + 1/4 + ⋯ diverges: its partial
+    sums ∑_{k=1}^{n} 1/k tend to infinity as n → ∞.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -386,7 +454,10 @@ concepts:
 - slug: wiedijk-035-taylor-s-theorem
   title: Taylor’s Theorem
   wiedijk_number: 35
-  informal_statement: null
+  informal_statement: If f is n + 1 times differentiable on an interval containing
+    a and x, then f(x) equals its nth-degree Taylor polynomial ∑_{k=0}^{n} f^{(k)}(a)(x
+    − a)^k / k! plus a remainder term, which can be expressed in Lagrange form as
+    f^{(n+1)}(ξ)(x − a)^{n+1}/(n+1)! for some ξ between a and x.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -411,14 +482,22 @@ concepts:
 - slug: wiedijk-036-brouwer-fixed-point-theorem
   title: Brouwer Fixed Point Theorem
   wiedijk_number: 36
-  informal_statement: null
+  informal_statement: 'Every continuous map from the closed n-dimensional ball to
+    itself has a fixed point: if f : B^n → B^n is continuous, then there exists x
+    ∈ B^n with f(x) = x. The same conclusion holds for any nonempty compact convex
+    subset of Euclidean space.'
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-037-the-solution-of-a-cubic
   title: The Solution of a Cubic
   wiedijk_number: 37
-  informal_statement: null
+  informal_statement: 'The roots of a cubic equation ax^3 + bx^2 + cx + d = 0 (a ≠
+    0) are given explicitly by radicals in the coefficients: after the substitution
+    x = t − b/(3a) reduces the equation to the depressed form t^3 + pt + q = 0, its
+    roots are t = ∛(−q/2 + √(q²/4 + p³/27)) + ∛(−q/2 − √(q²/4 + p³/27)), with the
+    three roots obtained from the three compatible choices of cube roots (Cardano''s
+    formula).'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -431,7 +510,10 @@ concepts:
 - slug: wiedijk-038-arithmetic-mean-geometric-mean
   title: Arithmetic Mean/Geometric Mean
   wiedijk_number: 38
-  informal_statement: null
+  informal_statement: 'For any nonnegative real numbers x₁, …, xₙ, the geometric mean
+    does not exceed the arithmetic mean: (x₁x₂⋯xₙ)^{1/n} ≤ (x₁ + x₂ + ⋯ + xₙ)/n, with
+    equality if and only if all the xᵢ are equal. More generally, for nonnegative
+    weights w₁, …, wₙ summing to 1, ∏ xᵢ^{wᵢ} ≤ ∑ wᵢxᵢ.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -444,7 +526,11 @@ concepts:
 - slug: wiedijk-039-solutions-to-pell-s-equation
   title: Solutions to Pell’s Equation
   wiedijk_number: 39
-  informal_statement: null
+  informal_statement: 'For every nonsquare positive integer d, the equation x² − dy²
+    = 1 has infinitely many solutions in positive integers, and every solution is
+    generated by a fundamental solution: there is a least solution (x₁, y₁) such that
+    all positive solutions (xₙ, yₙ) are given by xₙ + yₙ√d = (x₁ + y₁√d)^n for n =
+    1, 2, 3, ….'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -463,7 +549,10 @@ concepts:
 - slug: wiedijk-040-minkowski-s-fundamental-theorem
   title: Minkowski’s Fundamental Theorem
   wiedijk_number: 40
-  informal_statement: null
+  informal_statement: If K is a convex subset of ℝⁿ that is symmetric about the origin
+    and has volume greater than 2ⁿ times the covolume of a lattice L, then K contains
+    a nonzero point of L. In particular, a symmetric convex body in ℝⁿ of volume greater
+    than 2ⁿ contains a nonzero point of the integer lattice ℤⁿ.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -476,14 +565,18 @@ concepts:
 - slug: wiedijk-041-puiseux-s-theorem
   title: Puiseux’s Theorem
   wiedijk_number: 41
-  informal_statement: null
+  informal_statement: The field of Puiseux series over an algebraically closed field
+    of characteristic zero is algebraically closed; equivalently, every polynomial
+    equation P(x, y) = 0 with complex coefficients can be solved for y as a fractional
+    power series in x, i.e. a series in rational powers of x with bounded denominators.
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-042-sum-of-the-reciprocals-of-the-triangular-numbers
   title: Sum of the Reciprocals of the Triangular Numbers
   wiedijk_number: 42
-  informal_statement: null
+  informal_statement: 'The sum of the reciprocals of the triangular numbers Tₙ = n(n+1)/2
+    equals 2: that is, ∑_{n=1}^{∞} 2/(n(n+1)) = 2.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -496,14 +589,18 @@ concepts:
 - slug: wiedijk-043-the-isoperimetric-theorem
   title: The Isoperimetric Theorem
   wiedijk_number: 43
-  informal_statement: null
+  informal_statement: Among all simple closed curves in the plane of a given perimeter
+    L, the circle encloses the greatest area; equivalently, every such curve enclosing
+    area A satisfies L² ≥ 4πA, with equality if and only if the curve is a circle.
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-044-the-binomial-theorem
   title: The Binomial Theorem
   wiedijk_number: 44
-  informal_statement: null
+  informal_statement: For any elements x and y of a commutative ring and any natural
+    number n, (x + y)^n = ∑_{k=0}^{n} C(n, k) x^k y^{n−k}, where C(n, k) = n!/(k!(n−k)!)
+    is the binomial coefficient.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -516,7 +613,9 @@ concepts:
 - slug: wiedijk-045-the-partition-theorem
   title: The Partition Theorem
   wiedijk_number: 45
-  informal_statement: null
+  informal_statement: For every positive integer n, the number of partitions of n
+    into odd parts equals the number of partitions of n into distinct parts (Euler's
+    partition theorem).
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -529,7 +628,11 @@ concepts:
 - slug: wiedijk-046-the-solution-of-the-general-quartic-equation
   title: The Solution of the General Quartic Equation
   wiedijk_number: 46
-  informal_statement: null
+  informal_statement: 'The roots of the general quartic equation ax⁴ + bx³ + cx² +
+    dx + e = 0 (a ≠ 0) are expressible by radicals in the coefficients: the substitution
+    x = t − b/(4a) reduces the equation to a depressed quartic t⁴ + pt² + qt + r =
+    0, whose roots are obtained by solving an associated cubic resolvent and extracting
+    square roots, yielding an explicit closed-form solution.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -542,7 +645,10 @@ concepts:
 - slug: wiedijk-047-the-central-limit-theorem
   title: The Central Limit Theorem
   wiedijk_number: 47
-  informal_statement: null
+  informal_statement: If X₁, X₂, … are independent, identically distributed random
+    variables with mean μ and finite nonzero variance σ², then the normalized sums
+    (∑_{k=1}^{n} X_k − nμ)/(σ√n) converge in distribution to the standard normal distribution
+    as n → ∞.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -555,7 +661,9 @@ concepts:
 - slug: wiedijk-048-dirichlet-s-theorem
   title: Dirichlet’s Theorem
   wiedijk_number: 48
-  informal_statement: null
+  informal_statement: For any coprime positive integers a and m, there are infinitely
+    many primes congruent to a modulo m; that is, the arithmetic progression a, a
+    + m, a + 2m, … contains infinitely many primes.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -568,7 +676,9 @@ concepts:
 - slug: wiedijk-049-the-cayley-hamilton-theorem
   title: The Cayley-Hamilton Theorem
   wiedijk_number: 49
-  informal_statement: null
+  informal_statement: 'Every square matrix over a commutative ring satisfies its own
+    characteristic polynomial: if A is an n × n matrix and p(λ) = det(λI − A) is its
+    characteristic polynomial, then p(A) = 0.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -581,14 +691,16 @@ concepts:
 - slug: wiedijk-050-the-number-of-platonic-solids
   title: The Number of Platonic Solids
   wiedijk_number: 50
-  informal_statement: null
+  informal_statement: 'There are exactly five convex regular polyhedra: the tetrahedron,
+    the cube, the octahedron, the dodecahedron, and the icosahedron.'
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-051-wilson-s-lemma
   title: Wilson’s Lemma
   wiedijk_number: 51
-  informal_statement: null
+  informal_statement: For every prime number p, the factorial (p − 1)! is congruent
+    to −1 modulo p. Conversely, if n > 1 and (n − 1)! ≡ −1 (mod n), then n is prime.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -601,7 +713,7 @@ concepts:
 - slug: wiedijk-052-the-number-of-subsets-of-a-set
   title: The Number of Subsets of a Set
   wiedijk_number: 52
-  informal_statement: null
+  informal_statement: A set with n elements has exactly 2^n subsets.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -614,14 +726,18 @@ concepts:
 - slug: wiedijk-053-pi-is-transcendental
   title: Pi is Transcendental
   wiedijk_number: 53
-  informal_statement: null
+  informal_statement: 'The number π is transcendental: it is not a root of any nonzero
+    polynomial with rational coefficients.'
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-054-k-nigsberg-bridges-problem
   title: Königsberg Bridges Problem
   wiedijk_number: 54
-  informal_statement: null
+  informal_statement: In the multigraph formed by the four land masses of Königsberg
+    joined by its seven bridges, there is no walk that crosses each bridge exactly
+    once. Equivalently, this graph admits no Eulerian trail, since it has more than
+    two vertices of odd degree.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -634,7 +750,9 @@ concepts:
 - slug: wiedijk-055-product-of-segments-of-chords
   title: Product of Segments of Chords
   wiedijk_number: 55
-  informal_statement: null
+  informal_statement: If two chords of a circle intersect at a point P, then the product
+    of the lengths of the two segments into which P divides one chord equals the product
+    of the lengths of the two segments into which P divides the other.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -647,14 +765,16 @@ concepts:
 - slug: wiedijk-056-the-hermite-lindemann-transcendence-theorem
   title: The Hermite-Lindemann Transcendence Theorem
   wiedijk_number: 56
-  informal_statement: null
+  informal_statement: For every nonzero algebraic number α, the number e^α is transcendental.
+    In particular e and π are transcendental.
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-057-heron-s-formula
   title: Heron’s Formula
   wiedijk_number: 57
-  informal_statement: null
+  informal_statement: A triangle with side lengths a, b, c and semiperimeter s = (a
+    + b + c)/2 has area √(s(s − a)(s − b)(s − c)).
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -667,7 +787,8 @@ concepts:
 - slug: wiedijk-058-formula-for-the-number-of-combinations
   title: Formula for the Number of Combinations
   wiedijk_number: 58
-  informal_statement: null
+  informal_statement: The number of k-element subsets of an n-element set is the binomial
+    coefficient C(n, k) = n!/(k!(n − k)!).
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -686,7 +807,9 @@ concepts:
 - slug: wiedijk-059-the-laws-of-large-numbers
   title: The Laws of Large Numbers
   wiedijk_number: 59
-  informal_statement: null
+  informal_statement: If X₁, X₂, … are independent, identically distributed integrable
+    random variables with mean μ, then the sample average (X₁ + ⋯ + Xₙ)/n converges
+    to μ almost surely (the strong law) and hence also in probability (the weak law).
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -699,7 +822,9 @@ concepts:
 - slug: wiedijk-060-bezout-s-theorem
   title: Bezout’s Theorem
   wiedijk_number: 60
-  informal_statement: null
+  informal_statement: In the projective plane over an algebraically closed field,
+    two algebraic curves of degrees m and n with no common component intersect in
+    exactly mn points, counted with intersection multiplicity.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -712,7 +837,9 @@ concepts:
 - slug: wiedijk-061-theorem-of-ceva
   title: Theorem of Ceva
   wiedijk_number: 61
-  informal_statement: null
+  informal_statement: Let D, E, F be points on the sides BC, CA, AB of a triangle
+    ABC. The cevians AD, BE, CF are concurrent if and only if (BD/DC) · (CE/EA) ·
+    (AF/FB) = 1.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -725,7 +852,10 @@ concepts:
 - slug: wiedijk-062-fair-games-theorem
   title: Fair Games Theorem
   wiedijk_number: 62
-  informal_statement: null
+  informal_statement: An adapted, integrable discrete-time stochastic process (Xₙ)
+    is a submartingale if and only if E[X_σ] ≤ E[X_τ] for every pair of bounded stopping
+    times σ ≤ τ. In particular, in a fair game — a martingale — every bounded stopping
+    strategy leaves the expected fortune unchanged.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -738,7 +868,9 @@ concepts:
 - slug: wiedijk-063-cantor-s-theorem
   title: Cantor’s Theorem
   wiedijk_number: 63
-  informal_statement: null
+  informal_statement: For every set A there is no surjection from A onto its power
+    set; hence the cardinality of A is strictly less than the cardinality of the set
+    of all subsets of A.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -751,7 +883,9 @@ concepts:
 - slug: wiedijk-064-l-hopital-s-rule
   title: L’Hopital’s Rule
   wiedijk_number: 64
-  informal_statement: null
+  informal_statement: Let f and g be differentiable near a point a with g′ nonvanishing
+    there, and suppose f(x) → 0 and g(x) → 0 as x → a. If f′(x)/g′(x) tends to a limit
+    L as x → a, then f(x)/g(x) also tends to L.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -764,7 +898,8 @@ concepts:
 - slug: wiedijk-065-isosceles-triangle-theorem
   title: Isosceles Triangle Theorem
   wiedijk_number: 65
-  informal_statement: null
+  informal_statement: If two sides of a triangle have equal length, then the angles
+    opposite those sides are equal.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -777,7 +912,9 @@ concepts:
 - slug: wiedijk-066-sum-of-a-geometric-series
   title: Sum of a Geometric Series
   wiedijk_number: 66
-  informal_statement: null
+  informal_statement: For r ≠ 1, the finite geometric sum satisfies 1 + r + r² + ⋯
+    + r^(n−1) = (rⁿ − 1)/(r − 1); and for |r| < 1 the infinite series ∑_{n=0}^∞ rⁿ
+    converges to 1/(1 − r).
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -796,14 +933,17 @@ concepts:
 - slug: wiedijk-067-e-is-transcendental
   title: e is Transcendental
   wiedijk_number: 67
-  informal_statement: null
+  informal_statement: 'The number e is transcendental: it is not a root of any nonzero
+    polynomial with rational coefficients.'
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-068-sum-of-an-arithmetic-series
   title: Sum of an arithmetic series
   wiedijk_number: 68
-  informal_statement: null
+  informal_statement: The sum of the n terms a, a + d, a + 2d, …, a + (n − 1)d of
+    an arithmetic progression equals n(2a + (n − 1)d)/2. In particular, 1 + 2 + ⋯
+    + n = n(n + 1)/2.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -816,7 +956,10 @@ concepts:
 - slug: wiedijk-069-greatest-common-divisor-algorithm
   title: Greatest Common Divisor Algorithm
   wiedijk_number: 69
-  informal_statement: null
+  informal_statement: 'The Euclidean algorithm — repeatedly replacing the pair (a,
+    b) by (b, a mod b) until the second entry is zero — terminates and computes the
+    greatest common divisor of a and b: a common divisor of both that is divisible
+    by every other common divisor.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -841,7 +984,9 @@ concepts:
 - slug: wiedijk-070-the-perfect-number-theorem
   title: The Perfect Number Theorem
   wiedijk_number: 70
-  informal_statement: null
+  informal_statement: An even positive integer is perfect (equal to the sum of its
+    proper divisors) if and only if it has the form 2^(p−1)(2^p − 1) where 2^p − 1
+    is prime.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -854,7 +999,8 @@ concepts:
 - slug: wiedijk-071-order-of-a-subgroup
   title: Order of a Subgroup
   wiedijk_number: 71
-  informal_statement: null
+  informal_statement: The order of any subgroup of a finite group divides the order
+    of the group.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -867,7 +1013,9 @@ concepts:
 - slug: wiedijk-072-sylow-s-theorem
   title: Sylow’s Theorem
   wiedijk_number: 72
-  informal_statement: null
+  informal_statement: Let G be a finite group of order pⁿm with p prime and p not
+    dividing m. Then G contains a subgroup of order pⁿ; all such Sylow p-subgroups
+    are conjugate in G; and their number is congruent to 1 modulo p and divides m.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -898,7 +1046,9 @@ concepts:
 - slug: wiedijk-073-ascending-or-descending-sequences-erd-s-szekeres-theorem
   title: Ascending or Descending Sequences (Erdős–Szekeres Theorem)
   wiedijk_number: 73
-  informal_statement: null
+  informal_statement: Every sequence of more than rs distinct real numbers contains
+    an increasing subsequence of length r + 1 or a decreasing subsequence of length
+    s + 1.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -911,7 +1061,8 @@ concepts:
 - slug: wiedijk-074-the-principle-of-mathematical-induction
   title: The Principle of Mathematical Induction
   wiedijk_number: 74
-  informal_statement: null
+  informal_statement: If a property of natural numbers holds for 0, and holds for
+    n + 1 whenever it holds for n, then it holds for every natural number.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -924,7 +1075,9 @@ concepts:
 - slug: wiedijk-075-the-mean-value-theorem
   title: The Mean Value Theorem
   wiedijk_number: 75
-  informal_statement: null
+  informal_statement: If f is continuous on the closed interval [a, b] and differentiable
+    on the open interval (a, b), then there exists a point c in (a, b) with f′(c)
+    = (f(b) − f(a))/(b − a).
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -937,7 +1090,10 @@ concepts:
 - slug: wiedijk-076-fourier-series
   title: Fourier Series
   wiedijk_number: 76
-  informal_statement: null
+  informal_statement: 'Every square-integrable function f on the circle is represented
+    by its Fourier series in the mean-square sense: with coefficients c_n = (1/2π)
+    ∫₀^{2π} f(x) e^{-inx} dx, the partial sums ∑_{|n|≤N} c_n e^{inx} converge to f
+    in the L² norm as N → ∞.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -956,7 +1112,10 @@ concepts:
 - slug: wiedijk-077-sum-of-kth-powers
   title: Sum of kth powers
   wiedijk_number: 77
-  informal_statement: null
+  informal_statement: For every positive integer k, the sum of the k-th powers of
+    the first n natural numbers is given by a polynomial in n of degree k+1; explicitly,
+    ∑_{i=0}^{n-1} i^k = (1/(k+1)) ∑_{j=0}^{k} \binom{k+1}{j} B_j n^{k+1-j}, where
+    the B_j are the Bernoulli numbers.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -975,7 +1134,8 @@ concepts:
 - slug: wiedijk-078-the-cauchy-schwarz-inequality
   title: The Cauchy-Schwarz Inequality
   wiedijk_number: 78
-  informal_statement: null
+  informal_statement: In any inner product space, |⟨x, y⟩| ≤ ‖x‖·‖y‖ for all vectors
+    x and y, with equality if and only if x and y are linearly dependent.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -994,7 +1154,9 @@ concepts:
 - slug: wiedijk-079-the-intermediate-value-theorem
   title: The Intermediate Value Theorem
   wiedijk_number: 79
-  informal_statement: null
+  informal_statement: 'If f is a continuous real-valued function on a closed interval
+    [a, b], then f attains every value between f(a) and f(b): for each y between f(a)
+    and f(b) there exists c ∈ [a, b] with f(c) = y.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1007,7 +1169,8 @@ concepts:
 - slug: wiedijk-080-the-fundamental-theorem-of-arithmetic
   title: The Fundamental Theorem of Arithmetic
   wiedijk_number: 80
-  informal_statement: null
+  informal_statement: Every integer greater than 1 can be written as a product of
+    primes, and this factorization is unique up to the order of the factors.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1044,7 +1207,8 @@ concepts:
 - slug: wiedijk-081-divergence-of-the-prime-reciprocal-series
   title: Divergence of the Prime Reciprocal Series
   wiedijk_number: 81
-  informal_statement: null
+  informal_statement: 'The series of reciprocals of the prime numbers diverges: ∑_{p
+    prime} 1/p = ∞.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1063,7 +1227,8 @@ concepts:
 - slug: wiedijk-082-dissection-of-cubes-j-e-littlewood-s-elegant-proof
   title: Dissection of Cubes (J.E. Littlewood’s ‘elegant’ proof)
   wiedijk_number: 82
-  informal_statement: null
+  informal_statement: A cube cannot be dissected into finitely many smaller cubes
+    that are pairwise of different sizes; that is, no perfect cubed cube exists.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1076,7 +1241,9 @@ concepts:
 - slug: wiedijk-083-the-friendship-theorem
   title: The Friendship Theorem
   wiedijk_number: 83
-  informal_statement: null
+  informal_statement: If G is a finite graph in which every two distinct vertices
+    have exactly one common neighbor, then G has a vertex adjacent to all other vertices;
+    consequently G is a windmill of triangles sharing that common vertex.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1089,14 +1256,16 @@ concepts:
 - slug: wiedijk-084-morley-s-theorem
   title: Morley’s Theorem
   wiedijk_number: 84
-  informal_statement: null
+  informal_statement: In any triangle, the three points of intersection of adjacent
+    angle trisectors form an equilateral triangle.
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-085-divisibility-by-3-rule
   title: Divisibility by 3 Rule
   wiedijk_number: 85
-  informal_statement: null
+  informal_statement: A natural number is divisible by 3 if and only if the sum of
+    its decimal digits is divisible by 3.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1109,7 +1278,10 @@ concepts:
 - slug: wiedijk-086-lebesgue-measure-and-integration
   title: Lebesgue Measure and Integration
   wiedijk_number: 86
-  informal_statement: null
+  informal_statement: There exists a countably additive, translation-invariant measure
+    on a σ-algebra of subsets of ℝ containing all intervals that assigns to each interval
+    its length, and with respect to it an integral is defined for all measurable non-negative
+    (and, more generally, integrable) functions, extending the Riemann integral.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1122,14 +1294,20 @@ concepts:
 - slug: wiedijk-087-desargues-s-theorem
   title: Desargues’s Theorem
   wiedijk_number: 87
-  informal_statement: null
+  informal_statement: 'In a projective plane over a field (or any projective space
+    of dimension at least three), two triangles are in perspective from a point if
+    and only if they are in perspective from a line: if the three lines joining corresponding
+    vertices of triangles ABC and A''B''C'' are concurrent, then the three points
+    of intersection of corresponding sides AB·A''B'', BC·B''C'', CA·C''A'' are collinear,
+    and conversely.'
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-088-derangements-formula
   title: Derangements Formula
   wiedijk_number: 88
-  informal_statement: null
+  informal_statement: The number of permutations of n elements with no fixed point
+    (derangements) is D_n = n! ∑_{k=0}^{n} (−1)^k / k!.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1148,7 +1326,9 @@ concepts:
 - slug: wiedijk-089-the-factor-and-remainder-theorems
   title: The Factor and Remainder Theorems
   wiedijk_number: 89
-  informal_statement: null
+  informal_statement: For a polynomial f over a commutative ring and an element a,
+    the remainder upon dividing f by x − a is the constant f(a); in particular, x
+    − a divides f if and only if a is a root of f.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1167,7 +1347,8 @@ concepts:
 - slug: wiedijk-090-stirling-s-formula
   title: Stirling’s Formula
   wiedijk_number: 90
-  informal_statement: null
+  informal_statement: The factorial satisfies the asymptotic n! ∼ √(2πn) (n/e)^n,
+    meaning the ratio n! / (√(2πn) (n/e)^n) tends to 1 as n → ∞.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1180,7 +1361,9 @@ concepts:
 - slug: wiedijk-091-the-triangle-inequality
   title: The Triangle Inequality
   wiedijk_number: 91
-  informal_statement: null
+  informal_statement: In any normed vector space, ‖x + y‖ ≤ ‖x‖ + ‖y‖ for all vectors
+    x and y; equivalently, in a metric space the distance satisfies d(x, z) ≤ d(x,
+    y) + d(y, z).
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1193,14 +1376,18 @@ concepts:
 - slug: wiedijk-092-pick-s-theorem
   title: Pick’s Theorem
   wiedijk_number: 92
-  informal_statement: null
+  informal_statement: The area of a simple polygon whose vertices are lattice points
+    equals I + B/2 − 1, where I is the number of lattice points in the polygon's interior
+    and B is the number of lattice points on its boundary.
   msc_primary: null
   status: open
   alignments: []
 - slug: wiedijk-093-the-birthday-problem
   title: The Birthday Problem
   wiedijk_number: 93
-  informal_statement: null
+  informal_statement: If 23 people each have a birthday chosen uniformly and independently
+    from 365 equally likely days, the probability that at least two share a birthday
+    exceeds 1/2, while for 22 people it does not.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1219,7 +1406,8 @@ concepts:
 - slug: wiedijk-094-the-law-of-cosines
   title: The Law of Cosines
   wiedijk_number: 94
-  informal_statement: null
+  informal_statement: In a triangle with side lengths a, b, c, where γ is the angle
+    opposite the side of length c, one has c² = a² + b² − 2ab cos γ.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1232,7 +1420,9 @@ concepts:
 - slug: wiedijk-095-ptolemy-s-theorem
   title: Ptolemy’s Theorem
   wiedijk_number: 95
-  informal_statement: null
+  informal_statement: 'For a quadrilateral ABCD inscribed in a circle, the product
+    of the diagonals equals the sum of the products of the two pairs of opposite sides:
+    AC · BD = AB · CD + BC · AD.'
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1245,7 +1435,10 @@ concepts:
 - slug: wiedijk-096-principle-of-inclusion-exclusion
   title: Principle of Inclusion/Exclusion
   wiedijk_number: 96
-  informal_statement: null
+  informal_statement: For finite sets A₁, …, Aₙ, the cardinality of their union is
+    |A₁ ∪ ⋯ ∪ Aₙ| = ∑_{∅ ≠ S ⊆ {1,…,n}} (−1)^{|S|+1} |⋂_{i∈S} A_i|; that is, one alternately
+    adds the sizes of all intersections of odd numbers of the sets and subtracts those
+    of even numbers.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1276,7 +1469,10 @@ concepts:
 - slug: wiedijk-097-cramer-s-rule
   title: Cramer’s Rule
   wiedijk_number: 97
-  informal_statement: null
+  informal_statement: If A is an invertible n × n matrix over a field, the unique
+    solution of the linear system Ax = b is given componentwise by x_i = det(A_i)
+    / det(A), where A_i is the matrix obtained from A by replacing its i-th column
+    with b.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1289,7 +1485,7 @@ concepts:
 - slug: wiedijk-098-bertrand-s-postulate
   title: Bertrand’s Postulate
   wiedijk_number: 98
-  informal_statement: null
+  informal_statement: For every integer n ≥ 1 there is a prime p with n < p ≤ 2n.
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1302,7 +1498,11 @@ concepts:
 - slug: wiedijk-099-buffon-needle-problem
   title: Buffon Needle Problem
   wiedijk_number: 99
-  informal_statement: null
+  informal_statement: If a needle of length ℓ is dropped uniformly at random onto
+    a plane ruled with parallel lines a distance d ≥ ℓ apart, the probability that
+    the needle crosses a line is 2ℓ/(πd); for a long needle (ℓ > d) the probability
+    is (2/π)(ℓ/d − √((ℓ/d)² − 1) + arccos(d/ℓ))... more precisely (2ℓ/(π d))(1 − √(1
+    − (d/ℓ)²)) + 1 − (2/π) arcsin(d/ℓ).
   msc_primary: null
   status: partially-formalized
   alignments:
@@ -1321,7 +1521,9 @@ concepts:
 - slug: wiedijk-100-descartes-rule-of-signs
   title: Descartes Rule of Signs
   wiedijk_number: 100
-  informal_statement: null
+  informal_statement: The number of positive real roots of a real polynomial, counted
+    with multiplicity, is at most the number of sign changes in its sequence of nonzero
+    coefficients, and differs from that number by an even integer.
   msc_primary: null
   status: partially-formalized
   alignments:
