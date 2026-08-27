@@ -1,0 +1,330 @@
+generated_by: tools/propose_candidates.py
+library: metamath
+seed_source: concepts/wiedijk100.yaml
+verified_against: https://ocketgwbdzpxfjjkbfyb.supabase.co/rest/v1/atlas_statements
+  (library_id=metamath; every native_name confirmed present at generation time)
+generated_at: '2026-08-27T13:08:59.109189+00:00'
+note: CANDIDATE proposals only — plausible name matches, NOT verified alignments.
+  Never count these in headline numbers.
+proposal_count: 40
+proposals:
+- concept_slug: wiedijk-001-the-irrationality-of-the-square-root-of-2
+  library: metamath
+  native_name: sqrt2irr
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.sqrt2irr
+    confidence: high
+- concept_slug: wiedijk-002-fundamental-theorem-of-algebra
+  library: metamath
+  native_name: fta
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.fta
+    confidence: high
+- concept_slug: wiedijk-003-the-denumerability-of-the-rational-numbers
+  library: metamath
+  native_name: qnnen
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.qnnen
+    confidence: high
+- concept_slug: wiedijk-004-pythagorean-theorem
+  library: metamath
+  native_name: pythag
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.pythag
+    confidence: high
+- concept_slug: wiedijk-005-prime-number-theorem
+  library: metamath
+  native_name: pnt
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.pnt
+    confidence: high
+- concept_slug: wiedijk-007-law-of-quadratic-reciprocity
+  library: metamath
+  native_name: lgsquad
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.lgsquad
+    confidence: high
+- concept_slug: wiedijk-009-the-area-of-a-circle
+  library: metamath
+  native_name: areacirc
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.areacirc
+    confidence: high
+- concept_slug: wiedijk-010-euler-s-generalization-of-fermat-s-little-theorem
+  library: metamath
+  native_name: eulerth
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.eulerth
+    confidence: high
+- concept_slug: wiedijk-011-the-infinitude-of-primes
+  library: metamath
+  native_name: infpn
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.infpn
+    confidence: high
+- concept_slug: wiedijk-014-euler-s-summation-of-1-1-2-2-1-3-2
+  library: metamath
+  native_name: basel
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.basel
+    confidence: high
+- concept_slug: wiedijk-015-fundamental-theorem-of-integral-calculus
+  library: metamath
+  native_name: ftc1
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.ftc1
+    confidence: high
+- concept_slug: wiedijk-017-de-moivre-s-formula
+  library: metamath
+  native_name: demoivre
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.demoivre
+    confidence: high
+- concept_slug: wiedijk-018-liouville-s-theorem-and-the-construction-of-transcendental-numbers
+  library: metamath
+  native_name: aaliou
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.aaliou
+    confidence: high
+- concept_slug: wiedijk-019-four-squares-theorem
+  library: metamath
+  native_name: 4sq
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.4sq
+    confidence: high
+- concept_slug: wiedijk-020-all-primes-1-mod-4-equal-the-sum-of-two-squares
+  library: metamath
+  native_name: 2sq
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.2sq
+    confidence: high
+- concept_slug: wiedijk-022-the-non-denumerability-of-the-continuum
+  library: metamath
+  native_name: ruc
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.ruc
+    confidence: high
+- concept_slug: wiedijk-023-formula-for-pythagorean-triples
+  library: metamath
+  native_name: pythagtrip
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.pythagtrip
+    confidence: high
+- concept_slug: wiedijk-025-schroeder-bernstein-theorem
+  library: metamath
+  native_name: sbth
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.sbth
+    confidence: high
+- concept_slug: wiedijk-030-the-ballot-problem
+  library: metamath
+  native_name: ballotth
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.ballotth
+    confidence: high
+- concept_slug: wiedijk-031-ramsey-s-theorem
+  library: metamath
+  native_name: ramsey
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.ramsey
+    confidence: high
+- concept_slug: wiedijk-035-taylor-s-theorem
+  library: metamath
+  native_name: taylth
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.taylth
+    confidence: high
+- concept_slug: wiedijk-038-arithmetic-mean-geometric-mean
+  library: metamath
+  native_name: amgm
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.amgm
+    confidence: high
+- concept_slug: wiedijk-044-the-binomial-theorem
+  library: metamath
+  native_name: binom
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.binom
+    confidence: high
+- concept_slug: wiedijk-048-dirichlet-s-theorem
+  library: metamath
+  native_name: dirith
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.dirith
+    confidence: high
+- concept_slug: wiedijk-051-wilson-s-lemma
+  library: metamath
+  native_name: wilth
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.wilth
+    confidence: high
+- concept_slug: wiedijk-054-k-nigsberg-bridges-problem
+  library: metamath
+  native_name: konigsberg
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.konigsberg
+    confidence: high
+- concept_slug: wiedijk-057-heron-s-formula
+  library: metamath
+  native_name: heron
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.heron
+    confidence: high
+- concept_slug: wiedijk-060-bezout-s-theorem
+  library: metamath
+  native_name: bezout
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.bezout
+    confidence: high
+- concept_slug: wiedijk-063-cantor-s-theorem
+  library: metamath
+  native_name: canth
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.canth
+    confidence: high
+- concept_slug: wiedijk-064-l-hopital-s-rule
+  library: metamath
+  native_name: lhop
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.lhop
+    confidence: high
+- concept_slug: wiedijk-074-the-principle-of-mathematical-induction
+  library: metamath
+  native_name: nnind
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.nnind
+    confidence: high
+- concept_slug: wiedijk-075-the-mean-value-theorem
+  library: metamath
+  native_name: mvth
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.mvth
+    confidence: high
+- concept_slug: wiedijk-079-the-intermediate-value-theorem
+  library: metamath
+  native_name: ivth
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.ivth
+    confidence: high
+- concept_slug: wiedijk-080-the-fundamental-theorem-of-arithmetic
+  library: metamath
+  native_name: 1arith
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.1arith
+    confidence: high
+- concept_slug: wiedijk-081-divergence-of-the-prime-reciprocal-series
+  library: metamath
+  native_name: prmrec
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.prmrec
+    confidence: high
+- concept_slug: wiedijk-090-stirling-s-formula
+  library: metamath
+  native_name: stirling
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.stirling
+    confidence: high
+- concept_slug: wiedijk-096-principle-of-inclusion-exclusion
+  library: metamath
+  native_name: incexc
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.incexc
+    confidence: high
+- concept_slug: wiedijk-098-bertrand-s-postulate
+  library: metamath
+  native_name: bpos
+  tier: CANDIDATE
+  evidence:
+    method: keyword-heuristic
+    query: native_name=eq.bpos
+    confidence: high
+- concept_slug: wiedijk-049-the-cayley-hamilton-theorem
+  library: metamath
+  native_name: cayleyhamilton
+  tier: CANDIDATE
+  evidence:
+    method: name-similarity
+    query: native_name=ilike.cayl*
+    confidence: medium
+- concept_slug: wiedijk-049-the-cayley-hamilton-theorem
+  library: metamath
+  native_name: cayleyhamilton0
+  tier: CANDIDATE
+  evidence:
+    method: name-similarity
+    query: native_name=ilike.cayl*
+    confidence: medium
