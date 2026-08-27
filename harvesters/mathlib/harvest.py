@@ -32,12 +32,15 @@ _KINDS = {"theorem": "theorem", "thm": "theorem",
 
 
 def _load(source):
+    """Return (parsed json, source_version) — version from ETag/Last-Modified
+    for URLs (per-run provenance), file name for local fixtures."""
     if source.startswith("http"):
         import requests
         r = requests.get(source, timeout=600)
         r.raise_for_status()
-        return r.json()
-    return json.loads(pathlib.Path(source).read_text())
+        ver = r.headers.get("ETag") or r.headers.get("Last-Modified") or "unknown"
+        return r.json(), ver
+    return json.loads(pathlib.Path(source).read_text()), pathlib.Path(source).name
 
 
 def to_statement(name, decl):
@@ -60,7 +63,7 @@ def to_statement(name, decl):
 
 
 def harvest(source=DEFAULT_SOURCE, out_dir="out/mathlib"):
-    data = _load(source)
+    data, src_ver = _load(source)
     decls = data["declarations"]
     rows = []
     skipped = 0
@@ -72,7 +75,7 @@ def harvest(source=DEFAULT_SOURCE, out_dir="out/mathlib"):
     print(f"skipped {skipped} entries without docLink", file=sys.stderr)
     return write_harvest(out_dir, "mathlib", rows,
                          harvester_version=HARVESTER_VERSION,
-                         source_version="mathlib4_docs declaration-data",
+                         source_version=src_ver,
                          subject_derivation="Mathlib module path prefix")
 
 

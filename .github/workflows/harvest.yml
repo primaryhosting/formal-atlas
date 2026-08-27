@@ -44,14 +44,19 @@ jobs:
         with: {python-version: "3.12"}
       - run: pip install -e .
       - name: Harvest
+        id: harvest
         run: python harvesters/${{ matrix.library }}/harvest.py --out out/${{ matrix.library }}
       - name: Load to Supabase
+        id: load
         run: python -m atlas.load --dir out/${{ matrix.library }}
       - name: Sync concepts
         if: matrix.library == 'mathlib'
         run: python concepts/sync_concepts.py
       - name: Record failed run
-        if: failure()
+        # Only harvest/load failures are harvest-run failures. A concept-sync
+        # failure still fails the job (visible in Actions) but must not
+        # fabricate a failed harvest row — the data load already succeeded.
+        if: failure() && (steps.harvest.outcome == 'failure' || steps.load.outcome == 'failure')
         run: python -m atlas.load --record-failure ${{ matrix.library }} --note "workflow ${{ github.run_id }} failed at harvest or load"
       - uses: actions/upload-artifact@v4
         if: always()

@@ -5,7 +5,7 @@ and links back to each library's own source. No proof bodies are redistributed.
 
 | Library | Upstream | License |
 |---------|----------|---------|
-| Brockian registry | primaryhosting/brockian-mathematics `registry/theorems.json` | Project-owned |
+| Brockian registry | `torus.riemannlab.com/verified-registry.json` (sanitized public export — the raw internal registry is never read for public display) | Project-owned |
 | Metamath set.mm | metamath/set.mm | CC0 (public domain) |
 | Mathlib | leanprover-community/mathlib4 | Apache-2.0 |
 
