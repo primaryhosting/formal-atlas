@@ -2,6 +2,7 @@
 import argparse, json, pathlib, re, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
 from atlas.emit import write_harvest
+from atlas.msc import metamath_msc
 
 DEFAULT_SOURCE = "https://raw.githubusercontent.com/metamath/set.mm/develop/set.mm"
 HARVESTER_VERSION = "0.1.0"
@@ -67,7 +68,7 @@ def _row(label, kind_char, math, section):
     return {"library": "metamath", "native_name": label, "kind": kind,
             "statement_text": math or None, "module": section,
             "source_url": f"https://us.metamath.org/mpeuni/{label}.html",
-            "subject_codes": []}
+            "subject_codes": metamath_msc(section)}
 
 
 def harvest(source=DEFAULT_SOURCE, out_dir="out/metamath"):
@@ -82,7 +83,9 @@ def harvest(source=DEFAULT_SOURCE, out_dir="out/metamath"):
         src_ver = pathlib.Path(source).name
     return write_harvest(out_dir, "metamath", rows,
                          harvester_version=HARVESTER_VERSION, source_version=src_ver,
-                         subject_derivation="set.mm chapter headers")
+                         subject_derivation="MSC 2020 codes from set.mm part/section banner "
+                                            "titles via atlas.msc.metamath_msc phrase table; "
+                                            "unmapped sections carry no codes")
 
 
 if __name__ == "__main__":

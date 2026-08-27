@@ -1,0 +1,976 @@
+seed_source: targets-board
+generated_from: riemannlab /targets board (src/data/top100-problems.json, as_of 2026-08-06)
+concepts:
+- slug: target-001-riemann-hypothesis
+  title: Riemann Hypothesis
+  informal_statement: All nontrivial zeros of ζ(s) have real part 1/2.
+  msc_primary: null
+  status: open
+  board_id: riemann-hypothesis
+  board_status: open
+  alignments: []
+- slug: target-002-p-versus-np
+  title: P versus NP
+  informal_statement: Is every problem whose solution is quickly verifiable also quickly
+    solvable?
+  msc_primary: null
+  status: open
+  board_id: p-vs-np
+  board_status: open
+  alignments: []
+- slug: target-003-hodge-conjecture
+  title: Hodge Conjecture
+  informal_statement: Certain de Rham cohomology classes on projective varieties are
+    algebraic.
+  msc_primary: null
+  status: open
+  board_id: hodge-conjecture
+  board_status: open
+  alignments: []
+- slug: target-004-navier-stokes-existence-smoothness
+  title: Navier–Stokes Existence & Smoothness
+  informal_statement: Do smooth solutions of the 3D Navier–Stokes equations always
+    exist?
+  msc_primary: null
+  status: open
+  board_id: navier-stokes
+  board_status: open
+  alignments: []
+- slug: target-005-yang-mills-existence-mass-gap
+  title: Yang–Mills Existence & Mass Gap
+  informal_statement: Construct quantum Yang–Mills theory with a positive mass gap.
+  msc_primary: null
+  status: open
+  board_id: yang-mills
+  board_status: open
+  alignments: []
+- slug: target-006-birch-swinnerton-dyer-conjecture
+  title: Birch & Swinnerton-Dyer Conjecture
+  informal_statement: Rank of an elliptic curve equals the order of vanishing of its
+    L-function at s=1.
+  msc_primary: null
+  status: open
+  board_id: bsd
+  board_status: open
+  alignments: []
+- slug: target-007-poincar-conjecture
+  title: Poincaré Conjecture
+  informal_statement: Every simply connected closed 3-manifold is a 3-sphere.
+  msc_primary: null
+  status: open
+  board_id: poincare
+  board_status: resolved
+  alignments: []
+- slug: target-008-goldbach-s-conjecture
+  title: Goldbach's Conjecture
+  informal_statement: Every even integer > 2 is a sum of two primes.
+  msc_primary: null
+  status: partially-formalized
+  board_id: goldbach
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.GoldbachComb
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-009-twin-prime-conjecture
+  title: Twin Prime Conjecture
+  informal_statement: There are infinitely many primes p with p+2 prime.
+  msc_primary: null
+  status: partially-formalized
+  board_id: twin-prime
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.TwinPrimes
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-010-legendre-s-conjecture
+  title: Legendre's Conjecture
+  informal_statement: There is always a prime between n² and (n+1)².
+  msc_primary: null
+  status: partially-formalized
+  board_id: legendre
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.LegendreConjecture
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-011-landau-s-n-1-problem
+  title: Landau's n²+1 Problem
+  informal_statement: There are infinitely many primes of the form n²+1.
+  msc_primary: null
+  status: partially-formalized
+  board_id: landau-nsq1
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.LandauNSquaredPlusOne
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-012-collatz-conjecture
+  title: Collatz Conjecture
+  informal_statement: Iterating n→n/2 (even) or 3n+1 (odd) always reaches 1.
+  msc_primary: null
+  status: partially-formalized
+  board_id: collatz
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.CollatzPartial
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-013-odd-perfect-number
+  title: Odd Perfect Number
+  informal_statement: Does an odd perfect number exist?
+  msc_primary: null
+  status: open
+  board_id: odd-perfect
+  board_status: open
+  alignments: []
+- slug: target-014-infinitude-of-even-perfect-numbers
+  title: Infinitude of Even Perfect Numbers
+  informal_statement: Are there infinitely many (even) perfect numbers?
+  msc_primary: null
+  status: partially-formalized
+  board_id: perfect-infinite
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.MersennePerfect
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-015-infinitude-of-mersenne-primes
+  title: Infinitude of Mersenne Primes
+  informal_statement: Are there infinitely many primes 2^p − 1?
+  msc_primary: null
+  status: partially-formalized
+  board_id: mersenne-infinite
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.MersennePerfect
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-016-finiteness-of-fermat-primes
+  title: Finiteness of Fermat Primes
+  informal_statement: Are only finitely many Fermat numbers 2^(2^n)+1 prime?
+  msc_primary: null
+  status: partially-formalized
+  board_id: fermat-primes
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.FermatNumbers
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-017-polignac-s-conjecture
+  title: Polignac's Conjecture
+  informal_statement: For every even k, infinitely many prime pairs differ by k.
+  msc_primary: null
+  status: partially-formalized
+  board_id: polignac
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.PolignacPrimes
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-018-infinitude-of-sophie-germain-primes
+  title: Infinitude of Sophie Germain Primes
+  informal_statement: Infinitely many primes p with 2p+1 prime.
+  msc_primary: null
+  status: partially-formalized
+  board_id: sophie-germain
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.SophieGermain
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-019-andrica-s-conjecture
+  title: Andrica's Conjecture
+  informal_statement: √p_{n+1} − √p_n < 1 for all n.
+  msc_primary: null
+  status: partially-formalized
+  board_id: andrica
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.AndricaConjecture
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-020-brocard-s-problem
+  title: Brocard's Problem
+  informal_statement: n!+1 = m² has only finitely many solutions (Brown numbers).
+  msc_primary: null
+  status: partially-formalized
+  board_id: brocard
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.BrocardProblem
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-021-oppermann-s-conjecture
+  title: Oppermann's Conjecture
+  informal_statement: Prime-counting bounds between n(n−1), n², n(n+1).
+  msc_primary: null
+  status: partially-formalized
+  board_id: oppermann
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.OppermannConjecture
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-022-gilbreath-s-conjecture
+  title: Gilbreath's Conjecture
+  informal_statement: Iterated absolute prime-gap differences all begin with 1.
+  msc_primary: null
+  status: partially-formalized
+  board_id: gilbreath
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.GilbreathConjecture
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-023-erd-s-straus-conjecture
+  title: Erdős–Straus Conjecture
+  informal_statement: 4/n = 1/a+1/b+1/c solvable for all n≥2.
+  msc_primary: null
+  status: partially-formalized
+  board_id: erdos-straus
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.ErdosStraus
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-024-fortune-s-conjecture
+  title: Fortune's Conjecture
+  informal_statement: The 'fortunate numbers' are always prime.
+  msc_primary: null
+  status: partially-formalized
+  board_id: fortune
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.FortunateNumbers
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-025-sierpi-ski-problem
+  title: Sierpiński Problem
+  informal_statement: Is 78557 the smallest Sierpiński number?
+  msc_primary: null
+  status: partially-formalized
+  board_id: sierpinski
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.SierpinskiCovering
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-026-riesel-problem
+  title: Riesel Problem
+  informal_statement: Is 509203 the smallest Riesel number?
+  msc_primary: null
+  status: partially-formalized
+  board_id: riesel
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.RieselCovering
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-027-cram-r-s-conjecture
+  title: Cramér's Conjecture
+  informal_statement: Prime gaps satisfy g_n = O((log p_n)²).
+  msc_primary: null
+  status: open
+  board_id: cramer
+  board_status: open
+  alignments: []
+- slug: target-028-firoozbakht-s-conjecture
+  title: Firoozbakht's Conjecture
+  informal_statement: p_n^(1/n) is strictly decreasing.
+  msc_primary: null
+  status: open
+  board_id: firoozbakht
+  board_status: open
+  alignments: []
+- slug: target-029-grimm-s-conjecture
+  title: Grimm's Conjecture
+  informal_statement: Distinct prime divisors can be assigned to consecutive composites.
+  msc_primary: null
+  status: open
+  board_id: grimm
+  board_status: open
+  alignments: []
+- slug: target-030-abc-conjecture
+  title: abc Conjecture
+  informal_statement: For a+b=c coprime, c is bounded by rad(abc)^{1+ε}.
+  msc_primary: null
+  status: open
+  board_id: abc
+  board_status: disputed
+  alignments: []
+- slug: target-031-beal-s-conjecture
+  title: Beal's Conjecture
+  informal_statement: A^x+B^y=C^z with x,y,z>2 forces a common factor.
+  msc_primary: null
+  status: open
+  board_id: beal
+  board_status: open
+  alignments: []
+- slug: target-032-singmaster-s-conjecture
+  title: Singmaster's Conjecture
+  informal_statement: Each n>1 appears a bounded number of times in Pascal's triangle.
+  msc_primary: null
+  status: open
+  board_id: singmaster
+  board_status: open
+  alignments: []
+- slug: target-033-lonely-runner-conjecture
+  title: Lonely Runner Conjecture
+  informal_statement: On a unit circle each runner is eventually 'lonely'.
+  msc_primary: null
+  status: open
+  board_id: lonely-runner
+  board_status: open
+  alignments: []
+- slug: target-034-weak-ternary-goldbach
+  title: Weak (Ternary) Goldbach
+  informal_statement: Every odd number >5 is a sum of three primes.
+  msc_primary: null
+  status: open
+  board_id: goldbach-weak
+  board_status: resolved
+  alignments: []
+- slug: target-035-catalan-s-conjecture
+  title: Catalan's Conjecture
+  informal_statement: 8 and 9 are the only consecutive perfect powers.
+  msc_primary: null
+  status: open
+  board_id: catalan
+  board_status: resolved
+  alignments: []
+- slug: target-036-fermat-s-last-theorem
+  title: Fermat's Last Theorem
+  informal_statement: x^n+y^n=z^n has no positive solution for n>2.
+  msc_primary: null
+  status: open
+  board_id: fermat-last
+  board_status: resolved
+  alignments: []
+- slug: target-037-erd-s-discrepancy-problem
+  title: Erdős Discrepancy Problem
+  informal_statement: Every ±1 sequence has unbounded discrepancy on APs 0,d,2d,…
+  msc_primary: null
+  status: open
+  board_id: erdos-discrepancy
+  board_status: resolved
+  alignments: []
+- slug: target-038-infinitude-of-amicable-pairs
+  title: Infinitude of Amicable Pairs
+  informal_statement: Are there infinitely many amicable number pairs?
+  msc_primary: null
+  status: partially-formalized
+  board_id: amicable-infinite
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.AmicableNumbers
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-039-three-prime-carmichael-infinitude
+  title: Three-Prime Carmichael Infinitude
+  informal_statement: Infinitely many Carmichael numbers with three prime factors.
+  msc_primary: null
+  status: partially-formalized
+  board_id: carmichael-3
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.CarmichaelKorselt
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-040-infinitude-of-wilson-primes
+  title: Infinitude of Wilson Primes
+  informal_statement: Are there infinitely many Wilson primes?
+  msc_primary: null
+  status: partially-formalized
+  board_id: wilson-primes
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.WilsonPrimes
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-041-infinitude-of-repunit-primes
+  title: Infinitude of Repunit Primes
+  informal_statement: Are there infinitely many repunit primes?
+  msc_primary: null
+  status: partially-formalized
+  board_id: repunit-primes
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.RepunitPrimes
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-042-infinitude-of-palindromic-primes
+  title: Infinitude of Palindromic Primes
+  informal_statement: Infinitely many palindromic primes (in base 10).
+  msc_primary: null
+  status: partially-formalized
+  board_id: palindromic-primes
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.PalindromicPrimes
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-043-lehmer-s-totient-problem
+  title: Lehmer's Totient Problem
+  informal_statement: Does φ(n) | n−1 imply n prime?
+  msc_primary: null
+  status: open
+  board_id: lehmer-totient
+  board_status: open
+  alignments: []
+- slug: target-044-lehmer-s-mahler-measure-conjecture
+  title: Lehmer's Mahler-Measure Conjecture
+  informal_statement: A gap above 1 in Mahler measures of integer polynomials.
+  msc_primary: null
+  status: open
+  board_id: mahler-lehmer
+  board_status: open
+  alignments: []
+- slug: target-045-waring-goldbach-problems
+  title: Waring–Goldbach Problems
+  informal_statement: Representations by sums of prime powers.
+  msc_primary: null
+  status: open
+  board_id: waring-goldbach
+  board_status: open
+  alignments: []
+- slug: target-046-jacobian-conjecture
+  title: Jacobian Conjecture
+  informal_statement: A polynomial map with constant nonzero Jacobian is invertible.
+  msc_primary: null
+  status: open
+  board_id: jacobian
+  board_status: open
+  alignments: []
+- slug: target-047-schanuel-s-conjecture
+  title: Schanuel's Conjecture
+  informal_statement: A transcendence-degree lower bound for exp of ℚ-linearly-independent
+    numbers.
+  msc_primary: null
+  status: open
+  board_id: schanuel
+  board_status: open
+  alignments: []
+- slug: target-048-invariant-subspace-problem
+  title: Invariant Subspace Problem
+  informal_statement: Does every bounded operator on a separable Hilbert space have
+    a nontrivial invariant subspace?
+  msc_primary: null
+  status: open
+  board_id: invariant-subspace
+  board_status: open
+  alignments: []
+- slug: target-049-littlewood-conjecture
+  title: Littlewood Conjecture
+  informal_statement: liminf n·‖nα‖·‖nβ‖ = 0 for all reals α,β.
+  msc_primary: null
+  status: open
+  board_id: littlewood
+  board_status: open
+  alignments: []
+- slug: target-050-bombieri-lang-conjecture
+  title: Bombieri–Lang Conjecture
+  informal_statement: Rational points on general-type varieties are non-Zariski-dense.
+  msc_primary: null
+  status: open
+  board_id: bombieri-lang
+  board_status: open
+  alignments: []
+- slug: target-051-leopoldt-s-conjecture
+  title: Leopoldt's Conjecture
+  informal_statement: The p-adic regulator of a number field is nonzero.
+  msc_primary: null
+  status: open
+  board_id: leopoldt
+  board_status: open
+  alignments: []
+- slug: target-052-vandiver-s-conjecture
+  title: Vandiver's Conjecture
+  informal_statement: p does not divide the class number of the real cyclotomic field.
+  msc_primary: null
+  status: open
+  board_id: vandiver
+  board_status: open
+  alignments: []
+- slug: target-053-greenberg-s-conjecture
+  title: Greenberg's Conjecture
+  informal_statement: Iwasawa λ,μ invariants vanish for totally real fields.
+  msc_primary: null
+  status: open
+  board_id: greenberg
+  board_status: open
+  alignments: []
+- slug: target-054-sendov-s-conjecture
+  title: Sendov's Conjecture
+  informal_statement: Near each root of a polynomial (roots in unit disk) lies a critical
+    point.
+  msc_primary: null
+  status: open
+  board_id: sendov
+  board_status: open
+  alignments: []
+- slug: target-055-kadison-singer-problem
+  title: Kadison–Singer Problem
+  informal_statement: Unique extension of pure states on a maximal abelian subalgebra.
+  msc_primary: null
+  status: open
+  board_id: kadison-singer
+  board_status: resolved
+  alignments: []
+- slug: target-056-gaussian-correlation-inequality
+  title: Gaussian Correlation Inequality
+  informal_statement: A correlation inequality for symmetric convex sets under a Gaussian
+    measure.
+  msc_primary: null
+  status: open
+  board_id: gaussian-correlation
+  board_status: resolved
+  alignments: []
+- slug: target-057-connes-embedding-problem
+  title: Connes' Embedding Problem
+  informal_statement: Do all II₁ factors embed into an ultrapower of the hyperfinite
+    one?
+  msc_primary: null
+  status: open
+  board_id: connes-embedding
+  board_status: resolved
+  alignments: []
+- slug: target-058-duffin-schaeffer-conjecture
+  title: Duffin–Schaeffer Conjecture
+  informal_statement: A metric criterion for rational approximation by a/q.
+  msc_primary: null
+  status: open
+  board_id: duffin-schaeffer
+  board_status: resolved
+  alignments: []
+- slug: target-059-bieberbach-conjecture
+  title: Bieberbach Conjecture
+  informal_statement: Coefficient bounds |a_n|≤n for schlicht functions.
+  msc_primary: null
+  status: open
+  board_id: bieberbach
+  board_status: resolved
+  alignments: []
+- slug: target-060-smooth-4-dimensional-poincar
+  title: Smooth 4-Dimensional Poincaré
+  informal_statement: Is every smooth homotopy 4-sphere diffeomorphic to S⁴?
+  msc_primary: null
+  status: open
+  board_id: smooth-4d-poincare
+  board_status: open
+  alignments: []
+- slug: target-061-grothendieck-standard-conjectures
+  title: Grothendieck Standard Conjectures
+  informal_statement: Structural conjectures on algebraic cycles and motives.
+  msc_primary: null
+  status: open
+  board_id: hodge-standard
+  board_status: open
+  alignments: []
+- slug: target-062-tate-conjecture
+  title: Tate Conjecture
+  informal_statement: Étale cohomology classes fixed by Galois are algebraic.
+  msc_primary: null
+  status: open
+  board_id: tate
+  board_status: open
+  alignments: []
+- slug: target-063-grothendieck-s-section-conjecture
+  title: Grothendieck's Section Conjecture
+  informal_statement: Rational points via sections of the étale fundamental group.
+  msc_primary: null
+  status: open
+  board_id: section-conjecture
+  board_status: open
+  alignments: []
+- slug: target-064-novikov-conjecture
+  title: Novikov Conjecture
+  informal_statement: Higher signatures are homotopy invariants.
+  msc_primary: null
+  status: open
+  board_id: novikov
+  board_status: open
+  alignments: []
+- slug: target-065-baum-connes-conjecture
+  title: Baum–Connes Conjecture
+  informal_statement: An isomorphism computing K-theory of group C*-algebras.
+  msc_primary: null
+  status: open
+  board_id: baum-connes
+  board_status: open
+  alignments: []
+- slug: target-066-willmore-conjecture
+  title: Willmore Conjecture
+  informal_statement: The Clifford torus minimizes Willmore energy among tori.
+  msc_primary: null
+  status: open
+  board_id: willmore
+  board_status: resolved
+  alignments: []
+- slug: target-067-virtually-haken-conjecture
+  title: Virtually Haken Conjecture
+  informal_statement: Finite covers of aspherical 3-manifolds contain incompressible
+    surfaces.
+  msc_primary: null
+  status: open
+  board_id: virtual-haken
+  board_status: resolved
+  alignments: []
+- slug: target-068-kepler-conjecture
+  title: Kepler Conjecture
+  informal_statement: Face-centered cubic is the densest sphere packing.
+  msc_primary: null
+  status: open
+  board_id: kepler
+  board_status: resolved
+  alignments: []
+- slug: target-069-thurston-geometrization
+  title: Thurston Geometrization
+  informal_statement: Every closed 3-manifold decomposes into geometric pieces.
+  msc_primary: null
+  status: open
+  board_id: geometrization
+  board_status: resolved
+  alignments: []
+- slug: target-070-inscribed-square-toeplitz-problem
+  title: Inscribed Square (Toeplitz) Problem
+  informal_statement: Does every Jordan curve contain four vertices of a square?
+  msc_primary: null
+  status: open
+  board_id: inscribed-square
+  board_status: open
+  alignments: []
+- slug: target-071-moving-sofa-problem
+  title: Moving Sofa Problem
+  informal_statement: Largest area of a shape moved around an L-corridor.
+  msc_primary: null
+  status: open
+  board_id: moving-sofa
+  board_status: open
+  alignments: []
+- slug: target-072-hadwiger-nelson-problem
+  title: Hadwiger–Nelson Problem
+  informal_statement: Chromatic number of the plane (unit-distance graph).
+  msc_primary: null
+  status: open
+  board_id: hadwiger-nelson
+  board_status: open
+  alignments: []
+- slug: target-073-borsuk-s-conjecture
+  title: Borsuk's Conjecture
+  informal_statement: Can every bounded set be split into d+1 smaller-diameter pieces?
+  msc_primary: null
+  status: open
+  board_id: borsuk
+  board_status: resolved
+  alignments: []
+- slug: target-074-yau-s-conjectures-various
+  title: Yau's Conjectures (various)
+  informal_statement: A family of open conjectures in geometric analysis.
+  msc_primary: null
+  status: open
+  board_id: nirenberg-yau
+  board_status: open
+  alignments: []
+- slug: target-075-hadwiger-conjecture
+  title: Hadwiger Conjecture
+  informal_statement: A K_t-minor-free graph is (t−1)-colorable.
+  msc_primary: null
+  status: open
+  board_id: hadwiger
+  board_status: open
+  alignments: []
+- slug: target-076-union-closed-sets-frankl
+  title: Union-Closed Sets (Frankl)
+  informal_statement: Some element lies in ≥ half the sets of a union-closed family.
+  msc_primary: null
+  status: open
+  board_id: union-closed
+  board_status: open
+  alignments: []
+- slug: target-077-1-3-2-3-conjecture
+  title: 1/3–2/3 Conjecture
+  informal_statement: Every finite non-total poset has a pair with comparison probability
+    in [1/3,2/3].
+  msc_primary: null
+  status: open
+  board_id: one-third-two-thirds
+  board_status: open
+  alignments: []
+- slug: target-078-ryser-s-conjecture
+  title: Ryser's Conjecture
+  informal_statement: Covering number ≤ (r−1)·matching number in r-partite hypergraphs.
+  msc_primary: null
+  status: open
+  board_id: ryser
+  board_status: open
+  alignments: []
+- slug: target-079-sunflower-conjecture
+  title: Sunflower Conjecture
+  informal_statement: Bounds forcing a sunflower (Δ-system).
+  msc_primary: null
+  status: open
+  board_id: sunflower
+  board_status: open
+  alignments: []
+- slug: target-080-erd-s-faber-lov-sz-conjecture
+  title: Erdős–Faber–Lovász Conjecture
+  informal_statement: Chromatic index bound for edge-disjoint cliques.
+  msc_primary: null
+  status: open
+  board_id: erdos-faber-lovasz
+  board_status: resolved
+  alignments: []
+- slug: target-081-ringel-s-conjecture
+  title: Ringel's Conjecture
+  informal_statement: K_{2n+1} decomposes into copies of any n-edge tree.
+  msc_primary: null
+  status: open
+  board_id: ringel
+  board_status: resolved
+  alignments: []
+- slug: target-082-four-color-theorem
+  title: Four Color Theorem
+  informal_statement: Every planar map is 4-colorable.
+  msc_primary: null
+  status: open
+  board_id: four-color
+  board_status: resolved
+  alignments: []
+- slug: target-083-sensitivity-conjecture
+  title: Sensitivity Conjecture
+  informal_statement: Boolean sensitivity is polynomially related to block sensitivity.
+  msc_primary: null
+  status: open
+  board_id: sensitivity
+  board_status: resolved
+  alignments: []
+- slug: target-084-ramsey-number-r-5-5
+  title: Ramsey Number R(5,5)
+  informal_statement: Determine R(5,5) (known to lie in [43,46]).
+  msc_primary: null
+  status: open
+  board_id: ramsey-5-5
+  board_status: open
+  alignments: []
+- slug: target-085-diagonal-ramsey-exponent
+  title: Diagonal Ramsey Exponent
+  informal_statement: Improve the base in R(k,k) growth.
+  msc_primary: null
+  status: open
+  board_id: ramsey-exponent
+  board_status: open
+  alignments: []
+- slug: target-086-various-erd-s-conjectures
+  title: Various Erdős Conjectures
+  informal_statement: Erdős's large family of prize problems.
+  msc_primary: null
+  status: open
+  board_id: chvatal-erdos
+  board_status: open
+  alignments: []
+- slug: target-087-caccetta-h-ggkvist-conjecture
+  title: Caccetta–Häggkvist Conjecture
+  informal_statement: Minimum out-degree forces a short directed cycle.
+  msc_primary: null
+  status: open
+  board_id: caccetta-haggkvist
+  board_status: open
+  alignments: []
+- slug: target-088-erd-s-tur-n-density-conjecture
+  title: Erdős–Turán (density) Conjecture
+  informal_statement: Sets with divergent reciprocal sum contain arbitrarily long
+    APs.
+  msc_primary: null
+  status: open
+  board_id: erdos-turan-ap
+  board_status: open
+  alignments: []
+- slug: target-089-continuum-hypothesis
+  title: Continuum Hypothesis
+  informal_statement: Is there a cardinality strictly between ℕ and ℝ?
+  msc_primary: null
+  status: open
+  board_id: continuum-hypothesis
+  board_status: independent
+  alignments: []
+- slug: target-090-hilbert-s-tenth-problem
+  title: Hilbert's Tenth Problem
+  informal_statement: Is there an algorithm to decide solvability of Diophantine equations?
+  msc_primary: null
+  status: open
+  board_id: hilbert-10
+  board_status: resolved
+  alignments: []
+- slug: target-091-generalized-collatz-undecidability
+  title: Generalized Collatz Undecidability
+  informal_statement: Generalized Collatz-type problems are undecidable (Conway).
+  msc_primary: null
+  status: open
+  board_id: collatz-undecidable
+  board_status: resolved
+  alignments: []
+- slug: target-092-existence-of-np-intermediate-problems
+  title: Existence of NP-Intermediate Problems
+  informal_statement: Problems in NP that are neither in P nor NP-complete (if P≠NP).
+  msc_primary: null
+  status: open
+  board_id: np-intermediate
+  board_status: open
+  alignments: []
+- slug: target-093-unique-games-conjecture
+  title: Unique Games Conjecture
+  informal_statement: Hardness of approximating unique label-cover.
+  msc_primary: null
+  status: open
+  board_id: unique-games
+  board_status: open
+  alignments: []
+- slug: target-094-exponential-time-hypothesis
+  title: Exponential Time Hypothesis
+  informal_statement: 3-SAT has no 2^{o(n)} algorithm.
+  msc_primary: null
+  status: open
+  board_id: exponential-time-hypothesis
+  board_status: open
+  alignments: []
+- slug: target-095-prime-k-tuples-hardy-littlewood
+  title: Prime k-tuples (Hardy–Littlewood)
+  informal_statement: Asymptotics for admissible prime constellations.
+  msc_primary: null
+  status: partially-formalized
+  board_id: goldbach-comet
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.ConstellationWheel
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board
+- slug: target-096-gauss-class-number-problem
+  title: Gauss Class Number Problem
+  informal_statement: Are there infinitely many real quadratic fields of class number
+    1?
+  msc_primary: null
+  status: open
+  board_id: gauss-class-number
+  board_status: open
+  alignments: []
+- slug: target-097-perfect-cuboid-euler-brick
+  title: Perfect Cuboid (Euler Brick)
+  informal_statement: Does a box with integer edges, face- and space-diagonals exist?
+  msc_primary: null
+  status: open
+  board_id: euler-brick
+  board_status: open
+  alignments: []
+- slug: target-098-3-3-magic-square-of-squares
+  title: 3×3 Magic Square of Squares
+  informal_statement: Does a 3×3 magic square of distinct perfect squares exist?
+  msc_primary: null
+  status: open
+  board_id: magic-square-squares
+  board_status: open
+  alignments: []
+- slug: target-099-casas-alvero-conjecture
+  title: Casas-Alvero Conjecture
+  informal_statement: A degree-n polynomial sharing a root with each derivative is
+    (x−a)^n.
+  msc_primary: null
+  status: open
+  board_id: casas-alvero
+  board_status: open
+  alignments: []
+- slug: target-100-nagata-s-conjecture
+  title: Nagata's Conjecture
+  informal_statement: A lower bound on degrees of curves through general points.
+  msc_primary: null
+  status: open
+  board_id: nagata
+  board_status: open
+  alignments: []
+- slug: target-101-hilbert-s-16th-problem
+  title: Hilbert's 16th Problem
+  informal_statement: Bounds on the number/position of limit cycles of planar polynomial
+    vector fields.
+  msc_primary: null
+  status: open
+  board_id: hilbert-16
+  board_status: open
+  alignments: []
+- slug: target-102-dixmier-conjecture
+  title: Dixmier Conjecture
+  informal_statement: Every endomorphism of the Weyl algebra A_n is an automorphism.
+  msc_primary: null
+  status: open
+  board_id: dixmier
+  board_status: open
+  alignments: []
+- slug: target-103-zaremba-s-conjecture
+  title: Zaremba's Conjecture
+  informal_statement: Every denominator has a continued fraction with bounded partial
+    quotients.
+  msc_primary: null
+  status: open
+  board_id: goldbach-partition
+  board_status: open
+  alignments: []
+- slug: target-104-giuga-s-conjecture
+  title: Giuga's Conjecture
+  informal_statement: Σ k^{n−1} ≡ −1 (mod n) iff n is prime.
+  msc_primary: null
+  status: partially-formalized
+  board_id: agoh-giuga
+  board_status: open
+  alignments:
+  - library: brockian
+    native_name: Brockian.GiugaNumbers
+    tier: CURATED
+    evidence:
+      source: riemannlab targets board

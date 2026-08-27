@@ -1,0 +1,17 @@
+# Campaign approvals — the Chris gate (flywheel stage 2).
+#
+# HAND-EDITED, NEVER REGENERATED. Regenerating concepts/frontier-nominations.yaml
+# can never clobber an entry here; git history is the audit trail. No engine
+# consumes budget without an entry in `approvals`.
+#
+# Entry format (one mapping per approved nomination):
+#   - slug:        concept slug exactly as nominated in frontier-nominations.yaml
+#     approved_by: who approved (e.g. "Christopher Brock")
+#     date:        approval date, YYYY-MM-DD
+#     engine:      the dispatched engine (AutoLab project / Aristotle batch /
+#                  Brockian pipeline), matching the campaign brief
+#     budget_cap:  hard spend cap for the campaign (e.g. "$50")
+#     brief_path:  path to the campaign brief (template in docs/FLYWHEEL.md)
+#
+# Spec: docs/2026-08-27-proving-flywheel-spec.md (stage 2).
+approvals: []
