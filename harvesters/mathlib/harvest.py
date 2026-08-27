@@ -21,6 +21,7 @@ import urllib.parse
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
 from atlas.emit import write_harvest
+from atlas.msc import mathlib_msc
 
 DEFAULT_SOURCE = ("https://leanprover-community.github.io/mathlib4_docs/"
                   "declarations/declaration-data.bmp")
@@ -58,7 +59,7 @@ def to_statement(name, decl):
         "statement_text": None,  # doc-gen4 declaration export carries no statement text
         "module": module or None,
         "source_url": source_url,
-        "subject_codes": [],
+        "subject_codes": mathlib_msc(module),
     }
 
 
@@ -76,7 +77,9 @@ def harvest(source=DEFAULT_SOURCE, out_dir="out/mathlib"):
     return write_harvest(out_dir, "mathlib", rows,
                          harvester_version=HARVESTER_VERSION,
                          source_version=src_ver,
-                         subject_derivation="Mathlib module path prefix")
+                         subject_derivation="MSC 2020 codes from Mathlib module path via "
+                                            "atlas.msc.mathlib_msc longest-prefix table; "
+                                            "unmapped modules carry no codes")
 
 
 if __name__ == "__main__":

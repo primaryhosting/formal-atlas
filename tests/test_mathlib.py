@@ -12,6 +12,10 @@ def test_harvest_maps_kinds_and_urls(tmp_path):
     for r in rows:
         assert r["source_url"].startswith("https://leanprover-community.github.io/mathlib4_docs/")
         assert r["module"]
+    by = {r["native_name"]: r for r in rows}
+    assert by["ADEInequality.A"]["subject_codes"] == ["11"]           # Mathlib.NumberTheory.*
+    assert by["AddChar.map_zero_eq_one"]["subject_codes"] == ["20"]   # Mathlib.Algebra.Group.*
+    assert man["subject_derivation"].startswith("MSC 2020")
 
 def test_entry_without_doclink_is_skipped_not_fatal(tmp_path):
     man = harvest(source=str(FIX), out_dir=tmp_path)

@@ -9,7 +9,7 @@ on:
     - cron: "7 4 * * 1"
   workflow_dispatch:
     inputs:
-      library: {description: "brockian|metamath|mathlib|all", default: "all"}
+      library: {description: "brockian|metamath|mathlib|afp|coq|all", default: "all"}
       allow_big_delta: {description: "override the ±20% count-delta gate", default: "0"}
 jobs:
   plan:
@@ -24,8 +24,8 @@ jobs:
           INPUT_LIBRARY: ${{ github.event.inputs.library || 'all' }}
         run: |
           case "$INPUT_LIBRARY" in
-            brockian|metamath|mathlib) echo "libraries=[\"$INPUT_LIBRARY\"]" >> "$GITHUB_OUTPUT" ;;
-            *) echo 'libraries=["brockian","metamath","mathlib"]' >> "$GITHUB_OUTPUT" ;;
+            brockian|metamath|mathlib|afp|coq) echo "libraries=[\"$INPUT_LIBRARY\"]" >> "$GITHUB_OUTPUT" ;;
+            *) echo 'libraries=["brockian","metamath","mathlib","afp","coq"]' >> "$GITHUB_OUTPUT" ;;
           esac
   harvest:
     needs: plan
