@@ -9,6 +9,7 @@ harvest. Re-running is idempotent.
 HTTP layer (headers, pagination, raise_for_status) is imported from
 atlas.load — single implementation, no duplication.
 """
+import os
 import pathlib
 import sys
 import urllib.parse
@@ -74,6 +75,15 @@ def sync_file(path, supabase_url, service_key):
 
 
 def main():
+    # This script is PostgREST-only (the atlas-ingest edge function has no
+    # concept/alignment actions). In ingest-only CI it must be a no-op, not
+    # a job failure.
+    if (os.environ.get("ATLAS_INGEST_URL") and os.environ.get("ATLAS_INGEST_TOKEN")
+            and not (os.environ.get("ATLAS_SUPABASE_URL")
+                     and os.environ.get("ATLAS_SUPABASE_SERVICE_KEY"))):
+        print("sync_concepts requires direct PostgREST access "
+              "(ATLAS_SUPABASE_SERVICE_KEY); skipping in ingest mode")
+        return
     supabase_url, service_key = require_env()
     total_synced = total_pending = 0
     for path in sorted(CONCEPTS_DIR.glob("*.yaml")):

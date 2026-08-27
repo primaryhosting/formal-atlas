@@ -37,6 +37,8 @@ jobs:
     env:
       ATLAS_SUPABASE_URL: ${{ secrets.ATLAS_SUPABASE_URL }}
       ATLAS_SUPABASE_SERVICE_KEY: ${{ secrets.ATLAS_SUPABASE_SERVICE_KEY }}
+      ATLAS_INGEST_URL: ${{ secrets.ATLAS_INGEST_URL }}
+      ATLAS_INGEST_TOKEN: ${{ secrets.ATLAS_INGEST_TOKEN }}
       ATLAS_ALLOW_BIG_DELTA: ${{ github.event.inputs.allow_big_delta || '0' }}
     steps:
       - uses: actions/checkout@v4

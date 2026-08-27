@@ -1,9 +1,20 @@
-"""Load harvested output into Supabase (PostgREST).
+"""Load harvested output into the serving database.
+
+Two transports, one plan:
+
+- **PostgREST mode** (ATLAS_SUPABASE_URL + ATLAS_SUPABASE_SERVICE_KEY):
+  direct privileged writes via the service-role key.
+- **Ingest mode** (ATLAS_INGEST_URL + ATLAS_INGEST_TOKEN): the DB is
+  Lovable-Cloud-managed and no service_role key exists in CI, so all
+  privileged writes go through the deployed `atlas-ingest` edge function
+  (POST {action, ...} with an x-atlas-token header). Ingest mode wins when
+  both pairs are set.
 
 Safety model: plan_upsert() is a pure function computing the upsert/retire plan
 with two gates — refuse to retire an entire library on an empty harvest, and
 refuse a >±20% statement-count swing without an explicit override. All network
-side effects live in load(); tests exercise only the pure planning layer.
+side effects live in load(); tests exercise the planning layer and the
+transport call sequence (monkeypatched — no network).
 
 House pattern: every PostgREST request sends BOTH `apikey` and
 `Authorization: Bearer` headers. These helpers (headers/get_paged/post/patch)
@@ -76,6 +87,19 @@ def patch(supabase_url, service_key, path_query, body):
     return r
 
 
+def ingest_call(url, token, payload):
+    """POST one {action, ...} payload to the atlas-ingest edge function.
+
+    Non-2xx raises (requests.HTTPError); returns the decoded JSON body.
+    """
+    r = requests.post(url,
+                      headers={"x-atlas-token": token,
+                               "Content-Type": "application/json"},
+                      data=json.dumps(payload), timeout=120)
+    r.raise_for_status()
+    return r.json()
+
+
 def require_env():
     url = os.environ.get("ATLAS_SUPABASE_URL")
     key = os.environ.get("ATLAS_SUPABASE_SERVICE_KEY")
@@ -83,6 +107,28 @@ def require_env():
         sys.exit("error: ATLAS_SUPABASE_URL and ATLAS_SUPABASE_SERVICE_KEY "
                  "must be set in the environment")
     return url.rstrip("/"), key
+
+
+def require_transport():
+    """Resolve the write transport from the environment.
+
+    Returns (supabase_url, service_key, ingest_url, ingest_token) — exactly
+    one pair is non-None. Ingest mode wins when both ingest vars are set.
+    """
+    ingest_url = os.environ.get("ATLAS_INGEST_URL")
+    ingest_token = os.environ.get("ATLAS_INGEST_TOKEN")
+    if ingest_url and ingest_token:
+        return None, None, ingest_url, ingest_token
+    url = os.environ.get("ATLAS_SUPABASE_URL")
+    key = os.environ.get("ATLAS_SUPABASE_SERVICE_KEY")
+    if url and key:
+        return url.rstrip("/"), key, None, None
+    sys.exit(
+        "error: no complete write-transport configuration in the environment.\n"
+        "Set EITHER (ingest mode, Lovable-managed DB):\n"
+        "  ATLAS_INGEST_URL + ATLAS_INGEST_TOKEN\n"
+        "OR (direct PostgREST mode):\n"
+        "  ATLAS_SUPABASE_URL + ATLAS_SUPABASE_SERVICE_KEY")
 
 
 # ------------------------------------------------------------- pure planning
@@ -113,7 +159,13 @@ def _quote_name(name):
     return '"' + name.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
-def load(out_dir, supabase_url, service_key, allow_big_delta=False):
+def load(out_dir, supabase_url=None, service_key=None, allow_big_delta=False,
+         *, ingest_url=None, ingest_token=None):
+    """Load one harvest output dir. Transport is either direct PostgREST
+    (supabase_url + service_key) or the atlas-ingest edge function
+    (ingest_url + ingest_token). Same plan and row mapping in both modes;
+    only the wire calls differ."""
+    ingest = bool(ingest_url and ingest_token)
     out_dir = pathlib.Path(out_dir)
     manifest = json.loads((out_dir / "manifest.json").read_text())
     lib = manifest["library"]
@@ -125,20 +177,27 @@ def load(out_dir, supabase_url, service_key, allow_big_delta=False):
     # so a failed run never produces duplicate failed atlas_harvest_runs rows.
     # Exceptions propagate unhandled.
 
-    # 1. existing names (paginated — never a one-shot read). LIVE rows only
-    #    (retired=eq.false): an all-time baseline including retired rows
-    #    would inflate the ±20% delta gate until it trips on every run and
-    #    would re-retire the entire historical backlog each run.
-    existing = {r["native_name"] for r in get_paged(
-        supabase_url, service_key,
-        f"atlas_statements?library_id=eq.{lib}&retired=eq.false"
-        "&select=native_name&order=native_name")}
+    # 1. existing names. LIVE rows only (retired=false): an all-time baseline
+    #    including retired rows would inflate the ±20% delta gate until it
+    #    trips on every run and would re-retire the entire historical backlog
+    #    each run. PostgREST mode paginates client-side (never a one-shot
+    #    read); the edge function's "existing" action paginates server-side
+    #    and returns the complete live set.
+    if ingest:
+        existing = set(ingest_call(ingest_url, ingest_token,
+                                   {"action": "existing", "library": lib})["names"])
+    else:
+        existing = {r["native_name"] for r in get_paged(
+            supabase_url, service_key,
+            f"atlas_statements?library_id=eq.{lib}&retired=eq.false"
+            "&select=native_name&order=native_name")}
 
     # 2. plan
     plan = plan_upsert(existing, rows, allow_big_delta)
 
     # 3. upsert in batches; retired=False on EVERY row so reappearing
-    #    statements un-retire (merge-duplicates keeps omitted columns)
+    #    statements un-retire (merge-duplicates keeps omitted columns).
+    #    One row mapping for both transports.
     payload = [{
         "library_id": r["library"],
         "native_name": r["native_name"],
@@ -149,43 +208,64 @@ def load(out_dir, supabase_url, service_key, allow_big_delta=False):
         "subject_codes": r.get("subject_codes", []),
         "retired": False,
     } for r in rows]
-    for i in range(0, len(payload), UPSERT_BATCH):
-        post(supabase_url, service_key,
-             "atlas_statements?on_conflict=library_id,native_name",
-             payload[i:i + UPSERT_BATCH],
-             prefer="resolution=merge-duplicates,return=minimal")
+    for i in range(0, len(payload), UPSERT_BATCH):  # edge fn caps at 1000/call
+        batch = payload[i:i + UPSERT_BATCH]
+        if ingest:
+            ingest_call(ingest_url, ingest_token,
+                        {"action": "upsert", "rows": batch})
+        else:
+            post(supabase_url, service_key,
+                 "atlas_statements?on_conflict=library_id,native_name",
+                 batch, prefer="resolution=merge-duplicates,return=minimal")
 
-    # 4. retire vanished statements (library_id filter MANDATORY)
+    # 4. retire vanished statements (library scoping MANDATORY in both modes)
     retire = sorted(plan["retire"])
-    for i in range(0, len(retire), RETIRE_BATCH):
-        joined = ",".join(_quote_name(n) for n in retire[i:i + RETIRE_BATCH])
-        quoted = urllib.parse.quote(f"in.({joined})", safe="")
-        patch(supabase_url, service_key,
-              f"atlas_statements?library_id=eq.{lib}&native_name={quoted}",
-              {"retired": True})
+    for i in range(0, len(retire), RETIRE_BATCH):  # edge fn caps at 500/call
+        batch = retire[i:i + RETIRE_BATCH]
+        if ingest:
+            ingest_call(ingest_url, ingest_token,
+                        {"action": "retire", "library": lib, "names": batch})
+        else:
+            joined = ",".join(_quote_name(n) for n in batch)
+            quoted = urllib.parse.quote(f"in.({joined})", safe="")
+            patch(supabase_url, service_key,
+                  f"atlas_statements?library_id=eq.{lib}&native_name={quoted}",
+                  {"retired": True})
 
     # 5. library bookkeeping
-    patch(supabase_url, service_key,
-          f"atlas_libraries?id=eq.{lib}",
-          {"statement_count": manifest["statement_count"],
-           "last_harvest_at": manifest["harvested_at"],
-           "harvester_version": manifest["harvester_version"]})
+    meta = {"statement_count": manifest["statement_count"],
+            "last_harvest_at": manifest["harvested_at"],
+            "harvester_version": manifest["harvester_version"]}
+    if ingest:
+        ingest_call(ingest_url, ingest_token,
+                    {"action": "library_meta", "library": lib, **meta})
+    else:
+        patch(supabase_url, service_key, f"atlas_libraries?id=eq.{lib}", meta)
 
     # 6. record the successful run
-    post(supabase_url, service_key, "atlas_harvest_runs",
-         {"library_id": lib,
-          "source_version": manifest["source_version"],
-          "statements_seen": len(rows),
-          "added": plan["upsert_count"],
-          "retired": len(plan["retire"]),
-          "status": "ok"})
+    run = {"library_id": lib,
+           "source_version": manifest["source_version"],
+           "statements_seen": len(rows),
+           "added": plan["upsert_count"],
+           "retired": len(plan["retire"]),
+           "status": "ok"}
+    if ingest:
+        ingest_call(ingest_url, ingest_token,
+                    {"action": "run_insert", "run": run})
+    else:
+        post(supabase_url, service_key, "atlas_harvest_runs", run)
     return plan
 
 
-def record_failure(library, note, supabase_url, service_key):
-    post(supabase_url, service_key, "atlas_harvest_runs",
-         {"library_id": library, "status": "failed",
-          "log_url": None, "source_version": note})
+def record_failure(library, note, supabase_url=None, service_key=None,
+                   *, ingest_url=None, ingest_token=None):
+    run = {"library_id": library, "status": "failed", "source_version": note}
+    if ingest_url and ingest_token:
+        ingest_call(ingest_url, ingest_token,
+                    {"action": "run_insert", "run": run})
+    else:
+        post(supabase_url, service_key, "atlas_harvest_runs",
+             {**run, "log_url": None})
 
 
 # ---------------------------------------------------------------------- CLI
@@ -201,16 +281,18 @@ def main():
     parser.add_argument("--note", default="", help="note for --record-failure")
     args = parser.parse_args()
 
-    supabase_url, service_key = require_env()
+    supabase_url, service_key, ingest_url, ingest_token = require_transport()
     allow_big = args.allow_big_delta or os.environ.get("ATLAS_ALLOW_BIG_DELTA") == "1"
 
     if args.record_failure:
-        record_failure(args.record_failure, args.note, supabase_url, service_key)
+        record_failure(args.record_failure, args.note, supabase_url, service_key,
+                       ingest_url=ingest_url, ingest_token=ingest_token)
         print(f"recorded failed run for {args.record_failure}")
         return
     if not args.dir:
         parser.error("--dir is required unless --record-failure is given")
-    plan = load(args.dir, supabase_url, service_key, allow_big_delta=allow_big)
+    plan = load(args.dir, supabase_url, service_key, allow_big_delta=allow_big,
+                ingest_url=ingest_url, ingest_token=ingest_token)
     print(f"loaded {args.dir}: upserted {plan['upsert_count']}, "
           f"retired {len(plan['retire'])}")
 

@@ -9,14 +9,22 @@ Run after a weekly release: `python -m atlas.edition --tag N`.
     appeared in).
 (c) edition_tag = N on ok harvest runs not yet stamped.
 
+In ingest mode (ATLAS_INGEST_URL + ATLAS_INGEST_TOKEN) the atlas-ingest edge
+function's {"action": "edition", "tag": N} performs all three stamps
+server-side in place of the three PATCHes.
+
 HTTP layer imported from atlas.load — no duplication.
 """
 import argparse
 
-from atlas.load import patch, require_env
+from atlas.load import ingest_call, patch, require_transport
 
 
-def stamp_edition(tag, supabase_url, service_key):
+def stamp_edition(tag, supabase_url=None, service_key=None,
+                  *, ingest_url=None, ingest_token=None):
+    if ingest_url and ingest_token:
+        ingest_call(ingest_url, ingest_token, {"action": "edition", "tag": tag})
+        return
     patch(supabase_url, service_key,
           "atlas_statements?retired=eq.false",
           {"last_seen_edition": tag})
@@ -32,8 +40,9 @@ def main():
     parser = argparse.ArgumentParser(description="Stamp edition N onto the atlas")
     parser.add_argument("--tag", type=int, required=True, help="edition number")
     args = parser.parse_args()
-    supabase_url, service_key = require_env()
-    stamp_edition(args.tag, supabase_url, service_key)
+    supabase_url, service_key, ingest_url, ingest_token = require_transport()
+    stamp_edition(args.tag, supabase_url, service_key,
+                  ingest_url=ingest_url, ingest_token=ingest_token)
     print(f"stamped edition {args.tag}")
 
 
