@@ -1,0 +1,139 @@
+[
+ {
+  "abstract": "This entry shows an important basic fact in complex analysis, namely that a complex-valued function $f$ holomorphic on an open annulus $\\{z \\mid 0\\leq r \u003c \\Vert z - z_0\\Vert \\leq R\\}$ has a (generalised) Laurent series expansion of the form \\[f(z) = \\sum_{n=-\\infty}^\\infty a_n (z - z_0)^n\\] that is valid on the entire annulus.\nAn important special case that is also developed is $r = 0$, i.e. the local behaviour of a function around an isolated singularity. For non-essential singularities, this reduces to the well-known simpler Laurent series expansions from HOL-Complex_Analysis of the form $\\sum_{n=n_0}^\\infty a_n (z-z_0)^n$. ",
+  "authors": [
+   "Manuel Eberl"
+  ],
+  "date": "2026-08-22",
+  "link": "../entries/Laurent_Annulus.html",
+  "permalink": "https://isa-afp.org/entries/Laurent_Annulus.html",
+  "related": [],
+  "shortname": "Laurent_Annulus",
+  "title": "Laurent Series Expansions on an Annulus",
+  "topic_links": [
+   "../topics/mathematics/analysis/"
+  ],
+  "topics": [
+   "Mathematics/Analysis"
+  ],
+  "year": "2026"
+ },
+ {
+  "abstract": "We formalize Miquel's theorem, also known as the pivot theorem, in Isabelle/HOL. Let \\(ABC\\) be a triangle in the Euclidean plane and let \\(P\\), \\(Q\\), \\(R\\) be points on the side lines \\(BC\\), \\(CA\\), \\(AB\\) respectively. Then the circumcircles of the three triangles \\(AQR\\), \\(BRP\\), \\(CPQ\\) pass through a common point \\(M\\), the Miquel point of the configuration.\nThe development uses complex coordinates.",
+  "authors": [
+   "Arthur Freitas Ramos",
+   "David Barros Hulak",
+   "Ruy Jose Guerra Barretto de Queiroz"
+  ],
+  "date": "2026-08-11",
+  "link": "../entries/Miquel.html",
+  "permalink": "https://isa-afp.org/entries/Miquel.html",
+  "related": [],
+  "shortname": "Miquel",
+  "title": "Miquel's Theorem in Isabelle/HOL",
+  "topic_links": [
+   "../topics/mathematics/geometry/"
+  ],
+  "topics": [
+   "Mathematics/Geometry"
+  ],
+  "year": "2026"
+ },
+ {
+  "abstract": "We formalize a trace-based Rely-Guarantee semantics based on the work of Xu et al. The foundation includes an abstract Sequential/While/Parallel programming language equipped with operational semantics designed for concurrent reasoning. Upon this, we build a reasoning infrastructure that includes Rely-Guarantee inversion rules, alongside abstract definitions and standard soundness proofs for both unary and binary settings.",
+  "authors": [
+   "Marialena Hadjikosti",
+   "Andrei Popescu",
+   "Jamie Wright"
+  ],
+  "date": "2026-08-11",
+  "link": "../entries/Trace_Based_Rely_Guarantee.html",
+  "permalink": "https://isa-afp.org/entries/Trace_Based_Rely_Guarantee.html",
+  "related": [
+   {
+    "doi": "10.1007/978-3-032-22720-1_9"
+   }
+  ],
+  "shortname": "Trace_Based_Rely_Guarantee",
+  "title": "Trace Based Semantics for Rely Guarantee",
+  "topic_links": [
+   "../topics/computer-science/concurrency/",
+   "../topics/computer-science/semantics-and-reasoning/"
+  ],
+  "topics": [
+   "Computer science/Concurrency",
+   "Computer science/Semantics and reasoning"
+  ],
+  "year": "2026"
+ },
+ {
+  "abstract": "This entry presents a minimal, machine-checked deep embedding of classical higher-order logic (HOL) in Isabelle/HOL, following the article Higher-Order Semantics and Extensionality by Benzmüller, Brown and Kohlhase (Journal of Symbolic Logic 69(4), 2004; henceforth BKK). Throughout, HOL means Church's simple theory of types: it is the embedded object logic, while Isabelle/HOL serves as the ambient meta-logic. The language is formalised in a locally nameless representation, which makes BKK's convention of identifying α-equivalent terms literally true and eliminates capture-avoiding substitution and renaming machinery altogether. The semantics is rendered abstractly, following BKK: applicative structures, Σ-evaluations (D, @, E) subject to BKK's four conditions on the evaluation function, Σ-models (D, @, E, υ), and the class Mβfb of Σ-Henkin models (BKK's property q is automatic here, since primitive equality is part of the signature). Standard models arise as the full special case, and the familiar recursive denotation over frames enters only as the canonical way of constructing concrete models.\nOn this basis we prove the natural-deduction calculus NK of BKK sound (including BKK's evaluation-variant argument) and complete in the sense of Henkin, via BKK's abstract-consistency and model-existence method, with the term model realised as a term evaluation. Completeness is established in a form stronger than BKK's: it holds at every infinite value carrier, for every signature with infinitely many parameters, and for open formulas. Consistency follows by exhibiting a concrete Σ-standard model over finite domains. The signature includes BKK's optional primitive equality and — going beyond BKK, following Andrews' General Models, Descriptions, and Choice in Type Theory (1972) — typed description operators. As an illustration, Cantor's theorem is derived inside NK, in surjective and injective form and at every type. To the best of our knowledge, this is the first machine-checked completeness proof for a deep embedding of HOL in HOL. This contribution is part of the LogiKEy project.\n",
+  "authors": [
+   "Christoph Benzmüller",
+   "Daniel Kirchner"
+  ],
+  "date": "2026-08-05",
+  "link": "../entries/HOL_in_HOL_Deep.html",
+  "permalink": "https://isa-afp.org/entries/HOL_in_HOL_Deep.html",
+  "related": [
+   {
+    "doi": "10.2178/jsl/1102022211"
+   }
+  ],
+  "shortname": "HOL_in_HOL_Deep",
+  "title": "A deep embedding of HOL in HOL: soundness, completeness, consistency",
+  "topic_links": [
+   "../topics/logic/general-logic/mechanization-of-proofs/",
+   "../topics/logic/general-logic/"
+  ],
+  "topics": [
+   "Logic/General logic/Mechanization of proofs",
+   "Logic/General logic"
+  ],
+  "year": "2026"
+ },
+ {
+  "abstract": "We formalize the completeness of Peter B. Andrews' system \\( Q_0 \\), an implementation of Higher-Order Logic (also called simple type theory), following his textbook An Introduction to Mathematical Logic and Type Theory: To Truth Through Proof. Our work builds on Díaz's formalization of \\( Q_0 \\)'s syntax, semantics, soundness and consistency. The completeness is with respect to general models. We prove completeness by introducing an abstract consistency property for \\( Q_0 \\) using the framework for abstract consistency properties by From and Schlichtkrull to get a model existence theorem for \\( Q_0 \\). We adapt proofs from Andrews' book to this context.",
+  "authors": [
+   "Asta Halkjær From",
+   "Jonathan Julian Huerta y Munive",
+   "Anders Schlichtkrull"
+  ],
+  "date": "2026-08-03",
+  "link": "../entries/Q0_Completeness.html",
+  "permalink": "https://isa-afp.org/entries/Q0_Completeness.html",
+  "related": [],
+  "shortname": "Q0_Completeness",
+  "title": "Completeness of the Q0 Higher-Order Logic",
+  "topic_links": [
+   "../topics/logic/general-logic/",
+   "../topics/logic/general-logic/mechanization-of-proofs/"
+  ],
+  "topics": [
+   "Logic/General logic",
+   "Logic/General logic/Mechanization of proofs"
+  ],
+  "year": "2026"
+ },
+ {
+  "abstract": "We formalize the Wallace--Simson line theorem in Isabelle/HOL. Let \\(ABC\\) be a nondegenerate triangle and let \\(M\\) be a point on its circumcircle. Dropping the perpendiculars from \\(M\\) to the three side lines \\(BC\\), \\(CA\\), \\(AB\\) gives feet \\(P\\), \\(Q\\), \\(R\\); the theorem asserts that \\(P\\), \\(Q\\), \\(R\\) are collinear. The line through them is the Simson line, also called the Wallace line after William Wallace, whose published work on geometrical porisms is the standard early source for this result. We also prove the converse: if the three feet are collinear, then \\(M\\) lies on the circumcircle of \\(ABC\\). The development uses complex coordinates.",
+  "authors": [
+   "Arthur Freitas Ramos",
+   "David Barros Hulak",
+   "Ruy Jose Guerra Barretto de Queiroz"
+  ],
+  "date": "2026-08-03",
+  "link": "../entries/Simson.html",
+  "permalink": "https://isa-afp.org/entries/Simson.html",
+  "related": [],
+  "shortname": "Simson",
+  "title": "The Wallace--Simson Line Theorem in Isabelle/HOL",
+  "topic_links": [
+   "../topics/mathematics/geometry/"
+  ],
+  "topics": [
+   "Mathematics/Geometry"
+  ],
+  "year": "2026"
+ }
+]
