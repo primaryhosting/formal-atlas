@@ -137,6 +137,83 @@ def test_non_seed_yaml_is_skipped_not_synced(monkeypatch, tmp_path, capsys):
     assert "not a concept seed, skipped" in capsys.readouterr().out
 
 
+def test_module_prefix_skips_when_alignment_already_recorded(
+        monkeypatch, tmp_path, capsys):
+    """Review fix: the module-prefix pick is lexicographic over CURRENTLY
+    harvested declarations — a later harvest adding an alphabetically earlier
+    lemma must not make a re-sync insert a SECOND alignment row (different
+    statement_id, so on_conflict would not dedupe). An existing alignment
+    with evidence resolution=module-prefix for the concept means skip."""
+    posts = _patch(monkeypatch, [
+        ("native_name=eq.", []),  # no exact match
+        # A later harvest added an alphabetically EARLIER declaration than
+        # the one the first sync resolved to — would win the pick and insert
+        # a second row if not guarded.
+        ("or=(", [
+            {"id": 13, "native_name": "Brockian.GoldbachComb.aaa_new_lemma",
+             "module": None},
+        ]),
+        ("atlas_alignments?concept_id=eq.", [
+            {"id": 5, "evidence": {"resolution": "module-prefix",
+                                   "resolved_declaration":
+                                       "Brockian.GoldbachComb.comb_lower"}},
+        ]),
+    ])
+    synced, pending = sync.sync_file(_seed(tmp_path, "Brockian.GoldbachComb"),
+                                     "http://x", "k")
+    assert (synced, pending) == (1, 0)  # counted as already-synced, not pending
+    assert _alignment_posts(posts) == []  # no second row inserted
+    out = capsys.readouterr().out
+    assert "module-prefix alignment already recorded — skipping" in out
+
+
+def test_existing_alignment_without_module_prefix_does_not_block(
+        monkeypatch, tmp_path):
+    """Only a prior module-prefix resolution blocks the retry insert — an
+    exact-match alignment on the same concept (evidence without the
+    resolution key, or null evidence) must not."""
+    posts = _patch(monkeypatch, [
+        ("native_name=eq.", []),
+        ("or=(", [
+            {"id": 11, "native_name": "Brockian.GoldbachComb.comb_lower",
+             "module": None},
+        ]),
+        ("atlas_alignments?concept_id=eq.", [
+            {"id": 4, "evidence": {"source": "riemannlab targets board"}},
+            {"id": 6, "evidence": None},
+        ]),
+    ])
+    synced, pending = sync.sync_file(_seed(tmp_path, "Brockian.GoldbachComb"),
+                                     "http://x", "k")
+    assert (synced, pending) == (1, 0)
+    [(_, body)] = _alignment_posts(posts)
+    assert body[0]["evidence"]["resolution"] == "module-prefix"
+
+
+def test_postgrest_unsafe_native_name_skips_retry_stays_pending(
+        monkeypatch, tmp_path, capsys):
+    """Review fix (defensive): the or=() retry embeds native_name in a LIKE
+    pattern inside PostgREST or= grouping — , ( ) % or * would corrupt the
+    grouping or the pattern (PostgREST decodes before parsing). Such a name
+    skips the retry entirely and stays ALIGNMENT PENDING, with a note."""
+    posts = _patch(monkeypatch, [
+        ("native_name=eq.", []),  # no exact match
+        # If the retry ran anyway, this candidate WOULD match the prefix and
+        # trigger an insert — no alignment post proves the retry was skipped.
+        ("or=(", [
+            {"id": 11, "native_name": "Brockian.Weird(Name).lemma",
+             "module": None},
+        ]),
+    ])
+    synced, pending = sync.sync_file(_seed(tmp_path, "Brockian.Weird(Name)"),
+                                     "http://x", "k")
+    assert (synced, pending) == (0, 1)
+    assert _alignment_posts(posts) == []
+    out = capsys.readouterr().out
+    assert "ALIGNMENT PENDING" in out
+    assert "module-prefix retry skipped" in out
+
+
 def test_unresolved_stays_alignment_pending(monkeypatch, tmp_path, capsys):
     posts = _patch(monkeypatch, [
         ("native_name=eq.", []),

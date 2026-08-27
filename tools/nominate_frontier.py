@@ -174,12 +174,19 @@ def classify(slug, *, engine_ready=None, not_attackable=None):
             "(default tier — not in either curated table)")
 
 
-def _duplicate_annotation(wiedijk_concept):
+def _duplicate_annotation(wiedijk_concept, *, kept=False):
+    if kept:
+        note = ("same concept by normalized title; this board row is "
+                "excluded (not open frontier), so the wiedijk row is kept "
+                "on the formalization frontier — proven mathematics without "
+                "a recorded verification is still a coverage target")
+    else:
+        note = ("same concept by normalized title; the mathematical-frontier "
+                "row wins — annotated here, not listed twice")
     return {
         "slug": wiedijk_concept["slug"],
         "seed_source": FORM_SEED,
-        "note": ("same concept by normalized title; the mathematical-frontier "
-                 "row wins — annotated here, not listed twice"),
+        "note": note,
     }
 
 
@@ -190,6 +197,13 @@ def build_nominations(board_concepts, wiedijk_concepts, alignment_counts,
     # Cross-seed dedupe map: normalized board title -> board slug.
     board_by_title = {normalize_title(c["title"]): c["slug"]
                       for c in board_concepts}
+    # Board rows the loop below will EXCLUDE (resolved/disputed/independent).
+    # The dedupe must know this up front: when the winning board row is
+    # excluded, dropping the wiedijk duplicate would strand the concept on
+    # NEITHER actionable list — e.g. Fermat's Last Theorem, proven
+    # mathematics, is exactly what the formalization frontier is FOR.
+    excluded_board = {c["slug"]: c.get("board_status") for c in board_concepts
+                      if c.get("board_status") in EXCLUDED_BOARD_STATUSES}
     duplicates = {}  # board slug -> wiedijk duplicate annotation
     formalization = []
     for c in wiedijk_concepts:
@@ -197,9 +211,12 @@ def build_nominations(board_concepts, wiedijk_concepts, alignment_counts,
             continue  # coverage frontier = no recorded verification yet
         board_slug = board_by_title.get(normalize_title(c["title"]))
         if board_slug is not None:
-            duplicates[board_slug] = _duplicate_annotation(c)
-            continue  # mathematical row wins; annotated, not listed twice
-        formalization.append({
+            kept = board_slug in excluded_board
+            duplicates[board_slug] = _duplicate_annotation(c, kept=kept)
+            if not kept:
+                continue  # mathematical row wins; annotated, not listed twice
+            # The winning board row is excluded — keep the coverage row.
+        entry = {
             "slug": c["slug"],
             "title": c["title"],
             "seed_source": FORM_SEED,
@@ -211,7 +228,15 @@ def build_nominations(board_concepts, wiedijk_concepts, alignment_counts,
                 "atlas_status": "open",
                 "alignment_count": alignment_counts.get(c["slug"], 0),
             },
-        })
+        }
+        if board_slug is not None:
+            entry["duplicate_of"] = board_slug
+            entry["note"] = (
+                f"cross-seed duplicate of {board_slug}, whose board row is "
+                f"excluded (board_status={excluded_board[board_slug]}) — "
+                "kept here because a proven theorem without a recorded "
+                "formalization is a coverage target by definition")
+        formalization.append(entry)
 
     nominations = []
     excluded = []

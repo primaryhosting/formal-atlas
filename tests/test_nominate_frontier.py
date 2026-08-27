@@ -106,18 +106,29 @@ def test_resolved_disputed_independent_are_excluded_with_reason():
 
 # ------------------------------------------------------------------- dedupe
 
-def test_dedupe_mathematical_row_wins_and_duplicate_is_annotated():
+def test_dedupe_excluded_board_winner_does_not_swallow_coverage_row():
+    """Review blocker: FLT is PROVEN mathematics. Its board row wins the
+    cross-seed dedupe but is then EXCLUDED (board_status=resolved) — the
+    wiedijk coverage row must NOT vanish with it, or FLT lands on neither
+    actionable list, violating the formalization frontier's own definition.
+    The wiedijk row stays, annotated with the excluded duplicate it survived."""
     doc = _doc()
-    # wiedijk FLT collides (by normalized title) with the board FLT row:
-    # never listed in the formalization frontier...
-    form_slugs = {n["slug"] for n in doc["formalization_frontier"]}
-    assert W_FLT["slug"] not in form_slugs
-    # ...and the winning mathematical row (here: excluded) carries the
-    # annotation, so the duplicate is annotated, not listed twice.
+    by_slug = {n["slug"]: n for n in doc["formalization_frontier"]}
+    row = by_slug[W_FLT["slug"]]  # KEPT, not dropped
+    assert row["duplicate_of"] == B_FLT["slug"]
+    assert "resolved" in row["note"]  # names why the board winner is excluded
+    assert "coverage" in row["goal"]  # still coverage framing, never a campaign
+    # The excluded board row still carries the annotation, saying the
+    # duplicate was kept (never "not listed twice" — it IS listed).
     excluded = {e["slug"]: e for e in doc["excluded"]}
     dup = excluded[B_FLT["slug"]]["cross_seed_duplicate"]
     assert dup["slug"] == W_FLT["slug"]
     assert dup["seed_source"] == "wiedijk100"
+    assert "kept" in dup["note"].lower()
+    # Counts stay measured, and non-duplicate rows carry no annotation.
+    assert doc["counts"]["formalization_frontier"] == \
+        len(doc["formalization_frontier"])
+    assert "duplicate_of" not in by_slug[W_PNT["slug"]]
 
 
 def test_dedupe_annotates_nominated_row_when_math_row_is_open():

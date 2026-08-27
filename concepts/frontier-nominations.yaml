@@ -1,5 +1,5 @@
 generated_by: tools/nominate_frontier.py
-generated_at: '2026-08-27T22:50:51.453999+00:00'
+generated_at: '2026-08-27T23:01:00.525651+00:00'
 spec: docs/2026-08-27-proving-flywheel-spec.md
 tier_table_version: 1
 note: 'Proposal document only — this tool never writes to the database. Nothing here
@@ -7,7 +7,7 @@ note: 'Proposal document only — this tool never writes to the database. Nothin
   Chris gate). Alignment counts are live measurements with CANDIDATE tier excluded.'
 counts:
   mathematical_frontier: 81
-  formalization_frontier: 21
+  formalization_frontier: 22
   excluded: 23
   cross_seed_duplicates: 1
   tiers:
@@ -1304,6 +1304,20 @@ formalization_frontier:
     seed_source: wiedijk100
     atlas_status: open
     alignment_count: 0
+- slug: wiedijk-033-fermat-s-last-theorem
+  title: Fermat’s Last Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 33
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+  duplicate_of: target-036-fermat-s-last-theorem
+  note: cross-seed duplicate of target-036-fermat-s-last-theorem, whose board row
+    is excluded (board_status=resolved) — kept here because a proven theorem without
+    a recorded formalization is a coverage target by definition
 - slug: wiedijk-036-brouwer-fixed-point-theorem
   title: Brouwer Fixed Point Theorem
   seed_source: wiedijk100
@@ -1433,8 +1447,9 @@ excluded:
   cross_seed_duplicate:
     slug: wiedijk-033-fermat-s-last-theorem
     seed_source: wiedijk100
-    note: same concept by normalized title; the mathematical-frontier row wins — annotated
-      here, not listed twice
+    note: same concept by normalized title; this board row is excluded (not open frontier),
+      so the wiedijk row is kept on the formalization frontier — proven mathematics
+      without a recorded verification is still a coverage target
 - slug: target-037-erd-s-discrepancy-problem
   title: Erdős Discrepancy Problem
   board_status: resolved

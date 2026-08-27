@@ -21,6 +21,12 @@ from atlas.load import get_paged, post, require_env
 
 CONCEPTS_DIR = pathlib.Path(__file__).resolve().parent
 
+# Characters that would corrupt the module-prefix retry: the or=() grouping
+# and the LIKE pattern are parsed by PostgREST AFTER URL-decoding, so , ( )
+# survive quoting as structure and % * as pattern metacharacters. No current
+# Lean name contains any of these — purely defensive.
+RETRY_UNSAFE_CHARS = ",()%*"
+
 
 def pick_module_match(native_name, rows):
     """Module-prefix resolution (flywheel spec, stage 4). Board alignments
@@ -87,6 +93,28 @@ def sync_file(path, supabase_url, service_key):
             if not stmts:
                 # Module-prefix retry: the alignment may reference a Lean
                 # module rather than a declaration (targets-board precedent).
+                if any(ch in name for ch in RETRY_UNSAFE_CHARS):
+                    print(f"ALIGNMENT PENDING: {library}/{name} contains "
+                          f"PostgREST-unsafe characters "
+                          f"({RETRY_UNSAFE_CHARS}) — module-prefix retry "
+                          "skipped")
+                    pending += 1
+                    continue
+                # The prefix pick is lexicographic over CURRENTLY harvested
+                # declarations — a later harvest can add an earlier name, and
+                # a re-sync would then insert a SECOND row for this concept
+                # (different statement_id, so on_conflict cannot dedupe).
+                # One module-prefix alignment per concept: skip if recorded.
+                existing = get_paged(
+                    supabase_url, service_key,
+                    f"atlas_alignments?concept_id=eq.{concept_id}"
+                    "&select=id,evidence")
+                if any((r.get("evidence") or {}).get("resolution")
+                       == "module-prefix" for r in existing):
+                    print(f"module-prefix alignment already recorded — "
+                          f"skipping {library}/{name}")
+                    synced += 1
+                    continue
                 candidates = get_paged(
                     supabase_url, service_key,
                     f"atlas_statements?library_id=eq.{library}"
