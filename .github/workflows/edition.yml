@@ -1,0 +1,51 @@
+# Weekly edition: a fresh harvest is tarred into the release, while the DB
+# edition stamp covers whatever the latest scheduled loads put in Supabase.
+# The two can differ by a few hours of upstream drift — accepted for v0.
+name: edition
+on:
+  schedule:
+    - cron: "0 23 * * 0"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  edition:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ATLAS_SUPABASE_URL: ${{ secrets.ATLAS_SUPABASE_URL }}
+      ATLAS_SUPABASE_SERVICE_KEY: ${{ secrets.ATLAS_SUPABASE_SERVICE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -e .
+      - name: Harvest all libraries
+        run: |
+          python harvesters/brockian/harvest.py --out out/brockian
+          python harvesters/metamath/harvest.py --out out/metamath
+          python harvesters/mathlib/harvest.py --out out/mathlib
+      - name: Package edition tarball
+        run: tar czf edition.tar.gz out/
+      - name: Compute edition number
+        id: number
+        run: |
+          N=$(gh release list --json tagName -q '[.[] | select(.tagName | startswith("edition-"))] | length' 2>/dev/null || echo 0)
+          N=$((N+1))
+          echo "n=$N" >> "$GITHUB_OUTPUT"
+      - name: Create release
+        run: |
+          N='${{ steps.number.outputs.n }}'
+          python - "$N" <<'PYEOF' > notes.md
+          import glob, json, sys
+          n = sys.argv[1]
+          print(f"# Edition {n}\n")
+          print("Per-library statement counts:\n")
+          for path in sorted(glob.glob("out/*/manifest.json")):
+              m = json.load(open(path))
+              print(f"- **{m['library']}**: {m['statement_count']} statements "
+                    f"(source {m['source_version']}, harvested {m['harvested_at']})")
+          PYEOF
+          gh release create "edition-$N" edition.tar.gz --title "Edition $N" --notes-file notes.md
+      - name: Stamp edition in Supabase
+        run: python -m atlas.edition --tag ${{ steps.number.outputs.n }}

@@ -1,0 +1,56 @@
+# Scheduled ticks run ALL libraries — brockian's re-read is 3 MB and the others
+# are idempotent upserts; per-library cron splitting is deferred until Actions
+# minutes matter (YAGNI).
+name: harvest
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+    - cron: "43 5 * * *"
+    - cron: "7 4 * * 1"
+  workflow_dispatch:
+    inputs:
+      library: {description: "brockian|metamath|mathlib|all", default: "all"}
+      allow_big_delta: {description: "override the ±20% count-delta gate", default: "0"}
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      libraries: ${{ steps.pick.outputs.libraries }}
+    steps:
+      - id: pick
+        run: |
+          L='${{ github.event.inputs.library || 'all' }}'
+          if [ "$L" = "all" ]; then
+            echo 'libraries=["brockian","metamath","mathlib"]' >> "$GITHUB_OUTPUT"
+          else
+            echo "libraries=[\"$L\"]" >> "$GITHUB_OUTPUT"
+          fi
+  harvest:
+    needs: plan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        library: ${{ fromJSON(needs.plan.outputs.libraries) }}
+    env:
+      ATLAS_SUPABASE_URL: ${{ secrets.ATLAS_SUPABASE_URL }}
+      ATLAS_SUPABASE_SERVICE_KEY: ${{ secrets.ATLAS_SUPABASE_SERVICE_KEY }}
+      ATLAS_ALLOW_BIG_DELTA: ${{ github.event.inputs.allow_big_delta || '0' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -e .
+      - name: Harvest
+        run: python harvesters/${{ matrix.library }}/harvest.py --out out/${{ matrix.library }}
+      - name: Load to Supabase
+        run: python -m atlas.load --dir out/${{ matrix.library }}
+      - name: Sync concepts
+        if: matrix.library == 'mathlib'
+        run: python concepts/sync_concepts.py
+      - name: Record failed run
+        if: failure()
+        run: python -m atlas.load --record-failure ${{ matrix.library }} --note "workflow ${{ github.run_id }} failed at harvest or load"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: "harvest-${{ matrix.library }}-${{ github.run_id }}", path: "out/${{ matrix.library }}"}
