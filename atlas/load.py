@@ -120,55 +120,56 @@ def load(out_dir, supabase_url, service_key, allow_big_delta=False):
     rows = [json.loads(line) for line in
             (out_dir / "statements.jsonl").read_text().splitlines() if line]
 
-    try:
-        # 1. existing names (paginated — never a one-shot read)
-        existing = {r["native_name"] for r in get_paged(
-            supabase_url, service_key,
-            f"atlas_statements?library_id=eq.{lib}"
-            "&select=native_name&order=native_name")}
+    # Failure recording is the CALLER's job (harvest.yml's `if: failure()`
+    # step runs `--record-failure`); load() records only the successful run,
+    # so a failed run never produces duplicate failed atlas_harvest_runs rows.
+    # Exceptions propagate unhandled.
 
-        # 2. plan
-        plan = plan_upsert(existing, rows, allow_big_delta)
+    # 1. existing names (paginated — never a one-shot read). LIVE rows only
+    #    (retired=eq.false): an all-time baseline including retired rows
+    #    would inflate the ±20% delta gate until it trips on every run and
+    #    would re-retire the entire historical backlog each run.
+    existing = {r["native_name"] for r in get_paged(
+        supabase_url, service_key,
+        f"atlas_statements?library_id=eq.{lib}&retired=eq.false"
+        "&select=native_name&order=native_name")}
 
-        # 3. upsert in batches; retired=False on EVERY row so reappearing
-        #    statements un-retire (merge-duplicates keeps omitted columns)
-        payload = [{
-            "library_id": r["library"],
-            "native_name": r["native_name"],
-            "kind": r["kind"],
-            "statement_text": r.get("statement_text"),
-            "module": r.get("module"),
-            "source_url": r["source_url"],
-            "subject_codes": r.get("subject_codes", []),
-            "retired": False,
-        } for r in rows]
-        for i in range(0, len(payload), UPSERT_BATCH):
-            post(supabase_url, service_key,
-                 "atlas_statements?on_conflict=library_id,native_name",
-                 payload[i:i + UPSERT_BATCH],
-                 prefer="resolution=merge-duplicates,return=minimal")
+    # 2. plan
+    plan = plan_upsert(existing, rows, allow_big_delta)
 
-        # 4. retire vanished statements (library_id filter MANDATORY)
-        retire = sorted(plan["retire"])
-        for i in range(0, len(retire), RETIRE_BATCH):
-            joined = ",".join(_quote_name(n) for n in retire[i:i + RETIRE_BATCH])
-            quoted = urllib.parse.quote(f"in.({joined})", safe="")
-            patch(supabase_url, service_key,
-                  f"atlas_statements?library_id=eq.{lib}&native_name={quoted}",
-                  {"retired": True})
+    # 3. upsert in batches; retired=False on EVERY row so reappearing
+    #    statements un-retire (merge-duplicates keeps omitted columns)
+    payload = [{
+        "library_id": r["library"],
+        "native_name": r["native_name"],
+        "kind": r["kind"],
+        "statement_text": r.get("statement_text"),
+        "module": r.get("module"),
+        "source_url": r["source_url"],
+        "subject_codes": r.get("subject_codes", []),
+        "retired": False,
+    } for r in rows]
+    for i in range(0, len(payload), UPSERT_BATCH):
+        post(supabase_url, service_key,
+             "atlas_statements?on_conflict=library_id,native_name",
+             payload[i:i + UPSERT_BATCH],
+             prefer="resolution=merge-duplicates,return=minimal")
 
-        # 5. library bookkeeping
+    # 4. retire vanished statements (library_id filter MANDATORY)
+    retire = sorted(plan["retire"])
+    for i in range(0, len(retire), RETIRE_BATCH):
+        joined = ",".join(_quote_name(n) for n in retire[i:i + RETIRE_BATCH])
+        quoted = urllib.parse.quote(f"in.({joined})", safe="")
         patch(supabase_url, service_key,
-              f"atlas_libraries?id=eq.{lib}",
-              {"statement_count": manifest["statement_count"],
-               "last_harvest_at": manifest["harvested_at"],
-               "harvester_version": manifest["harvester_version"]})
-    except Exception:
-        post(supabase_url, service_key, "atlas_harvest_runs",
-             {"library_id": lib,
-              "source_version": manifest.get("source_version"),
-              "status": "failed"})
-        raise
+              f"atlas_statements?library_id=eq.{lib}&native_name={quoted}",
+              {"retired": True})
+
+    # 5. library bookkeeping
+    patch(supabase_url, service_key,
+          f"atlas_libraries?id=eq.{lib}",
+          {"statement_count": manifest["statement_count"],
+           "last_harvest_at": manifest["harvested_at"],
+           "harvester_version": manifest["harvester_version"]})
 
     # 6. record the successful run
     post(supabase_url, service_key, "atlas_harvest_runs",

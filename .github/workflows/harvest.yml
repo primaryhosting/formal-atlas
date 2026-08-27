@@ -17,14 +17,16 @@ jobs:
     outputs:
       libraries: ${{ steps.pick.outputs.libraries }}
     steps:
+      # Untrusted input reaches bash only via env (never interpolated into the
+      # script) and is allowlist-validated; unknown values fall back to all.
       - id: pick
+        env:
+          INPUT_LIBRARY: ${{ github.event.inputs.library || 'all' }}
         run: |
-          L='${{ github.event.inputs.library || 'all' }}'
-          if [ "$L" = "all" ]; then
-            echo 'libraries=["brockian","metamath","mathlib"]' >> "$GITHUB_OUTPUT"
-          else
-            echo "libraries=[\"$L\"]" >> "$GITHUB_OUTPUT"
-          fi
+          case "$INPUT_LIBRARY" in
+            brockian|metamath|mathlib) echo "libraries=[\"$INPUT_LIBRARY\"]" >> "$GITHUB_OUTPUT" ;;
+            *) echo 'libraries=["brockian","metamath","mathlib"]' >> "$GITHUB_OUTPUT" ;;
+          esac
   harvest:
     needs: plan
     runs-on: ubuntu-latest
