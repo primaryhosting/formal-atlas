@@ -10,6 +10,8 @@ def test_harvests_only_proved_sorry_free(tmp_path):
     assert man["statement_count"] == 2
     assert all(r["library"] == "brockian" for r in rows)
     assert all(r["source_url"].startswith("https://torus.riemannlab.com") for r in rows)
+    assert all(r["subject_codes"] == ["11"] for r in rows)  # Brockian.AbundantClosure -> 11
+    assert man["subject_derivation"].startswith("MSC 2020")
 
 def test_module_becomes_module_and_kind_maps(tmp_path):
     harvest(source=str(FIX), out_dir=tmp_path)

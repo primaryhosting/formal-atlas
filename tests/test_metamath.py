@@ -29,3 +29,7 @@ def test_harvest_emits_valid_output(tmp_path):
     assert man["statement_count"] == 4
     rows = [json.loads(l) for l in (tmp_path / "statements.jsonl").read_text().splitlines()]
     assert all(r["source_url"] == f"https://us.metamath.org/mpeuni/{r['native_name']}.html" for r in rows)
+    by = {r["native_name"]: r for r in rows}
+    assert by["id"]["subject_codes"] == ["03"]      # section "Propositional calculus"
+    assert by["mpbi"]["subject_codes"] == []        # "Logical equivalence" — unmapped, honest empty
+    assert man["subject_derivation"].startswith("MSC 2020")

@@ -12,6 +12,7 @@ import urllib.parse
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
 from atlas.emit import write_harvest
+from atlas.msc import brockian_msc
 
 DEFAULT_SOURCE = "https://torus.riemannlab.com/verified-registry.json"
 HARVESTER_VERSION = "0.1.0"
@@ -37,7 +38,7 @@ def to_statement(entry):
         "module": entry.get("module") or None,
         "source_url": "https://torus.riemannlab.com/explore/lean-registry?name="
                       + urllib.parse.quote(entry["name"]),
-        "subject_codes": [],
+        "subject_codes": brockian_msc(entry.get("module")),
     }
 
 
@@ -53,7 +54,9 @@ def harvest(source=DEFAULT_SOURCE, out_dir="out/brockian"):
     return write_harvest(out_dir, "brockian", rows,
                          harvester_version=HARVESTER_VERSION,
                          source_version=data.get("schema", "unknown"),
-                         subject_derivation="module prefix (not yet mapped to MSC)")
+                         subject_derivation="MSC 2020 codes from registry module path via "
+                                            "atlas.msc.brockian_msc prefix/segment table; "
+                                            "unmapped modules carry no codes")
 
 
 if __name__ == "__main__":
