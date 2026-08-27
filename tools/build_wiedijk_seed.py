@@ -41,9 +41,14 @@ def build_seed(source: str, out: str) -> dict:
         if "decl" in entry:
             names, field = [entry["decl"]], "decl"
         elif "decls" in entry:
+            if not isinstance(entry["decls"], list):
+                raise ValueError(f"entry {num}: decls must be a list")
             names, field = list(entry["decls"]), "decls"
         else:
             names, field = [], None
+        # Drop non-string/blank names; a field present but all-filtered means
+        # no alignment (status stays open).
+        names = [n for n in names if isinstance(n, str) and n.strip()]
         for name in names:
             alignments.append(
                 {
