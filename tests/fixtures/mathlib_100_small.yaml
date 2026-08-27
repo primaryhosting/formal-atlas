@@ -1,0 +1,18 @@
+# Verbatim excerpt of mathlib4 docs/100.yaml (entries 1, 5, 7), fetched 2026-08-26.
+1:
+  title  : The Irrationality of the Square Root of 2
+  decl   : irrational_sqrt_two
+  authors: mathlib
+5:
+  title   : Prime Number Theorem
+  authors : Alex Kontorovich, Terry Tao, and the Prime Number Theorem + Project
+  links   :
+    Prime Number Theorem : https://github.com/AlexKontorovich/PrimeNumberTheoremAnd/blob/a5040887e6bb24f7c201db8568e7755c138b3878/PrimeNumberTheoremAnd/Wiener.lean#L2196-L2211
+    With Error Terms     : https://github.com/AlexKontorovich/PrimeNumberTheoremAnd/blob/a5040887e6bb24f7c201db8568e7755c138b3878/PrimeNumberTheoremAnd/MediumPNT.lean#L5504-L6162
+    website              : https://github.com/AlexKontorovich/PrimeNumberTheoremAnd
+7:
+  title  : Law of Quadratic Reciprocity
+  decls  :
+    - legendreSym.quadratic_reciprocity
+    - jacobiSym.quadratic_reciprocity
+  authors: Chris Hughes (first) and Michael Stoll (second)

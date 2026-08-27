@@ -1,0 +1,1333 @@
+seed_source: wiedijk100
+generated_from: mathlib4 docs/100.yaml
+concepts:
+- slug: wiedijk-001-the-irrationality-of-the-square-root-of-2
+  title: The Irrationality of the Square Root of 2
+  wiedijk_number: 1
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: irrational_sqrt_two
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-002-fundamental-theorem-of-algebra
+  title: Fundamental Theorem of Algebra
+  wiedijk_number: 2
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Complex.exists_root
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-003-the-denumerability-of-the-rational-numbers
+  title: The Denumerability of the Rational Numbers
+  wiedijk_number: 3
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Rat.instDenumerable
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-004-pythagorean-theorem
+  title: Pythagorean Theorem
+  wiedijk_number: 4
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: EuclideanGeometry.dist_sq_eq_dist_sq_add_dist_sq_iff_angle_eq_pi_div_two
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-005-prime-number-theorem
+  title: Prime Number Theorem
+  wiedijk_number: 5
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-006-g-del-s-incompleteness-theorem
+  title: Gödel’s Incompleteness Theorem
+  wiedijk_number: 6
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-007-law-of-quadratic-reciprocity
+  title: Law of Quadratic Reciprocity
+  wiedijk_number: 7
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: legendreSym.quadratic_reciprocity
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: jacobiSym.quadratic_reciprocity
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-008-the-impossibility-of-trisecting-the-angle-and-doubling-the-cube
+  title: The Impossibility of Trisecting the Angle and Doubling the Cube
+  wiedijk_number: 8
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-009-the-area-of-a-circle
+  title: The Area of a Circle
+  wiedijk_number: 9
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Theorems100.area_disc
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-010-euler-s-generalization-of-fermat-s-little-theorem
+  title: Euler’s Generalization of Fermat’s Little Theorem
+  wiedijk_number: 10
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Nat.ModEq.pow_totient
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-011-the-infinitude-of-primes
+  title: The Infinitude of Primes
+  wiedijk_number: 11
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Nat.exists_infinite_primes
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-012-the-independence-of-the-parallel-postulate
+  title: The Independence of the Parallel Postulate
+  wiedijk_number: 12
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-013-polyhedron-formula
+  title: Polyhedron Formula
+  wiedijk_number: 13
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-014-euler-s-summation-of-1-1-2-2-1-3-2
+  title: Euler’s Summation of 1 + (1/2)^2 + (1/3)^2 + ….
+  wiedijk_number: 14
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: hasSum_zeta_two
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-015-fundamental-theorem-of-integral-calculus
+  title: Fundamental Theorem of Integral Calculus
+  wiedijk_number: 15
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: intervalIntegral.integral_hasStrictDerivAt_of_tendsto_ae_right
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: intervalIntegral.integral_eq_sub_of_hasDeriv_right_of_le
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-016-insolvability-of-general-higher-degree-equations-abel-ruffini-theorem
+  title: Insolvability of General Higher Degree Equations (Abel-Ruffini Theorem)
+  wiedijk_number: 16
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: AbelRuffini.exists_not_solvable_by_rad
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-017-de-moivre-s-formula
+  title: De Moivre’s Formula
+  wiedijk_number: 17
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Complex.cos_add_sin_mul_I_pow
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-018-liouville-s-theorem-and-the-construction-of-transcendental-numbers
+  title: Liouville’s Theorem and the Construction of Transcendental Numbers
+  wiedijk_number: 18
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Liouville.transcendental
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-019-four-squares-theorem
+  title: Four Squares Theorem
+  wiedijk_number: 19
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Nat.sum_four_squares
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-020-all-primes-1-mod-4-equal-the-sum-of-two-squares
+  title: All Primes (1 mod 4) Equal the Sum of Two Squares
+  wiedijk_number: 20
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Nat.Prime.sq_add_sq
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-021-green-s-theorem
+  title: Green’s Theorem
+  wiedijk_number: 21
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-022-the-non-denumerability-of-the-continuum
+  title: The Non-Denumerability of the Continuum
+  wiedijk_number: 22
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Cardinal.not_countable_real
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-023-formula-for-pythagorean-triples
+  title: Formula for Pythagorean Triples
+  wiedijk_number: 23
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: PythagoreanTriple.classification
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-024-the-independence-of-the-continuum-hypothesis
+  title: The Independence of the Continuum Hypothesis
+  wiedijk_number: 24
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-025-schroeder-bernstein-theorem
+  title: Schroeder-Bernstein Theorem
+  wiedijk_number: 25
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Function.Embedding.schroeder_bernstein
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-026-leibniz-s-series-for-pi
+  title: Leibniz’s Series for Pi
+  wiedijk_number: 26
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Real.tendsto_sum_pi_div_four
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-027-sum-of-the-angles-of-a-triangle
+  title: Sum of the Angles of a Triangle
+  wiedijk_number: 27
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: EuclideanGeometry.angle_add_angle_add_angle_eq_pi
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-028-pascal-s-hexagon-theorem
+  title: Pascal’s Hexagon Theorem
+  wiedijk_number: 28
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-029-feuerbach-s-theorem
+  title: Feuerbach’s Theorem
+  wiedijk_number: 29
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-030-the-ballot-problem
+  title: The Ballot Problem
+  wiedijk_number: 30
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Ballot.ballot_problem
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-031-ramsey-s-theorem
+  title: Ramsey’s Theorem
+  wiedijk_number: 31
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-032-the-four-color-problem
+  title: The Four Color Problem
+  wiedijk_number: 32
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-033-fermat-s-last-theorem
+  title: Fermat’s Last Theorem
+  wiedijk_number: 33
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-034-divergence-of-the-harmonic-series
+  title: Divergence of the Harmonic Series
+  wiedijk_number: 34
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Real.tendsto_sum_range_one_div_nat_succ_atTop
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-035-taylor-s-theorem
+  title: Taylor’s Theorem
+  wiedijk_number: 35
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: taylor_mean_remainder_lagrange
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: taylor_mean_remainder_cauchy
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: map_add_eq_sum_add_integral_iteratedFDeriv
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-036-brouwer-fixed-point-theorem
+  title: Brouwer Fixed Point Theorem
+  wiedijk_number: 36
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-037-the-solution-of-a-cubic
+  title: The Solution of a Cubic
+  wiedijk_number: 37
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Theorems100.cubic_eq_zero_iff
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-038-arithmetic-mean-geometric-mean
+  title: Arithmetic Mean/Geometric Mean
+  wiedijk_number: 38
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Real.geom_mean_le_arith_mean_weighted
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-039-solutions-to-pell-s-equation
+  title: Solutions to Pell’s Equation
+  wiedijk_number: 39
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Pell.eq_pell
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: Pell.exists_of_not_isSquare
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-040-minkowski-s-fundamental-theorem
+  title: Minkowski’s Fundamental Theorem
+  wiedijk_number: 40
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: MeasureTheory.exists_ne_zero_mem_lattice_of_measure_mul_two_pow_lt_measure
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-041-puiseux-s-theorem
+  title: Puiseux’s Theorem
+  wiedijk_number: 41
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-042-sum-of-the-reciprocals-of-the-triangular-numbers
+  title: Sum of the Reciprocals of the Triangular Numbers
+  wiedijk_number: 42
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Theorems100.inverse_triangle_sum
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-043-the-isoperimetric-theorem
+  title: The Isoperimetric Theorem
+  wiedijk_number: 43
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-044-the-binomial-theorem
+  title: The Binomial Theorem
+  wiedijk_number: 44
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: add_pow
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-045-the-partition-theorem
+  title: The Partition Theorem
+  wiedijk_number: 45
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Nat.Partition.card_odds_eq_card_distincts
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-046-the-solution-of-the-general-quartic-equation
+  title: The Solution of the General Quartic Equation
+  wiedijk_number: 46
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Theorems100.quartic_eq_zero_iff
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-047-the-central-limit-theorem
+  title: The Central Limit Theorem
+  wiedijk_number: 47
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: ProbabilityTheory.tendstoInDistribution_inv_sqrt_mul_sum_sub
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-048-dirichlet-s-theorem
+  title: Dirichlet’s Theorem
+  wiedijk_number: 48
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Nat.infinite_setOfPred_prime_and_eq_mod
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-049-the-cayley-hamilton-theorem
+  title: The Cayley-Hamilton Theorem
+  wiedijk_number: 49
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Matrix.aeval_self_charpoly
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-050-the-number-of-platonic-solids
+  title: The Number of Platonic Solids
+  wiedijk_number: 50
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-051-wilson-s-lemma
+  title: Wilson’s Lemma
+  wiedijk_number: 51
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: ZMod.wilsons_lemma
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-052-the-number-of-subsets-of-a-set
+  title: The Number of Subsets of a Set
+  wiedijk_number: 52
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Finset.card_powerset
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-053-pi-is-transcendental
+  title: Pi is Transcendental
+  wiedijk_number: 53
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-054-k-nigsberg-bridges-problem
+  title: Königsberg Bridges Problem
+  wiedijk_number: 54
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Konigsberg.not_isEulerian
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-055-product-of-segments-of-chords
+  title: Product of Segments of Chords
+  wiedijk_number: 55
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: EuclideanGeometry.mul_dist_eq_mul_dist_of_cospherical_of_angle_eq_pi
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-056-the-hermite-lindemann-transcendence-theorem
+  title: The Hermite-Lindemann Transcendence Theorem
+  wiedijk_number: 56
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-057-heron-s-formula
+  title: Heron’s Formula
+  wiedijk_number: 57
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Theorems100.heron
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-058-formula-for-the-number-of-combinations
+  title: Formula for the Number of Combinations
+  wiedijk_number: 58
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Finset.card_powersetCard
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: Finset.mem_powersetCard
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-059-the-laws-of-large-numbers
+  title: The Laws of Large Numbers
+  wiedijk_number: 59
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: ProbabilityTheory.strong_law_ae
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-060-bezout-s-theorem
+  title: Bezout’s Theorem
+  wiedijk_number: 60
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Nat.gcd_eq_gcd_ab
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-061-theorem-of-ceva
+  title: Theorem of Ceva
+  wiedijk_number: 61
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Affine.Triangle.prod_dist_div_dist_eq_one_of_mem_line_of_mem_line
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-062-fair-games-theorem
+  title: Fair Games Theorem
+  wiedijk_number: 62
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: MeasureTheory.submartingale_iff_expected_stoppedValue_mono
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-063-cantor-s-theorem
+  title: Cantor’s Theorem
+  wiedijk_number: 63
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Function.cantor_surjective
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-064-l-hopital-s-rule
+  title: L’Hopital’s Rule
+  wiedijk_number: 64
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: deriv.lhopital_zero_nhds
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-065-isosceles-triangle-theorem
+  title: Isosceles Triangle Theorem
+  wiedijk_number: 65
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: EuclideanGeometry.angle_eq_angle_of_dist_eq
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-066-sum-of-a-geometric-series
+  title: Sum of a Geometric Series
+  wiedijk_number: 66
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: geom_sum_Ico
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: NNReal.hasSum_geometric
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-067-e-is-transcendental
+  title: e is Transcendental
+  wiedijk_number: 67
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-068-sum-of-an-arithmetic-series
+  title: Sum of an arithmetic series
+  wiedijk_number: 68
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Finset.sum_range_id
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-069-greatest-common-divisor-algorithm
+  title: Greatest Common Divisor Algorithm
+  wiedijk_number: 69
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: EuclideanDomain.gcd
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: EuclideanDomain.gcd_dvd
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: EuclideanDomain.dvd_gcd
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-070-the-perfect-number-theorem
+  title: The Perfect Number Theorem
+  wiedijk_number: 70
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Theorems100.Nat.eq_two_pow_mul_prime_mersenne_of_even_perfect
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-071-order-of-a-subgroup
+  title: Order of a Subgroup
+  wiedijk_number: 71
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Subgroup.card_subgroup_dvd_card
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-072-sylow-s-theorem
+  title: Sylow’s Theorem
+  wiedijk_number: 72
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Sylow.exists_subgroup_card_pow_prime
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: Sylow.isPretransitive_of_finite
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: Sylow.card_dvd_index
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: card_sylow_modEq_one
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-073-ascending-or-descending-sequences-erd-s-szekeres-theorem
+  title: Ascending or Descending Sequences (Erdős–Szekeres Theorem)
+  wiedijk_number: 73
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Theorems100.erdos_szekeres
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-074-the-principle-of-mathematical-induction
+  title: The Principle of Mathematical Induction
+  wiedijk_number: 74
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Nat
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-075-the-mean-value-theorem
+  title: The Mean Value Theorem
+  wiedijk_number: 75
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: exists_deriv_eq_slope
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-076-fourier-series
+  title: Fourier Series
+  wiedijk_number: 76
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: fourierCoeff
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: hasSum_fourier_series_L2
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-077-sum-of-kth-powers
+  title: Sum of kth powers
+  wiedijk_number: 77
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: sum_range_pow
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: sum_Ico_pow
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-078-the-cauchy-schwarz-inequality
+  title: The Cauchy-Schwarz Inequality
+  wiedijk_number: 78
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: inner_mul_inner_self_le
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: norm_inner_le_norm
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-079-the-intermediate-value-theorem
+  title: The Intermediate Value Theorem
+  wiedijk_number: 79
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: intermediate_value_Icc
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-080-the-fundamental-theorem-of-arithmetic
+  title: The Fundamental Theorem of Arithmetic
+  wiedijk_number: 80
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Nat.primeFactorsList_unique
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: Int.euclideanDomain
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: EuclideanDomain.instIsPrincipalIdealRing
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: UniqueFactorizationMonoid
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: UniqueFactorizationMonoid.factors_unique
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-081-divergence-of-the-prime-reciprocal-series
+  title: Divergence of the Prime Reciprocal Series
+  wiedijk_number: 81
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Theorems100.Real.tendsto_sum_one_div_prime_atTop
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: not_summable_one_div_on_primes
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-082-dissection-of-cubes-j-e-littlewood-s-elegant-proof
+  title: Dissection of Cubes (J.E. Littlewood’s ‘elegant’ proof)
+  wiedijk_number: 82
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Theorems100.«82».cannot_cube_a_cube
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-083-the-friendship-theorem
+  title: The Friendship Theorem
+  wiedijk_number: 83
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Theorems100.friendship_theorem
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-084-morley-s-theorem
+  title: Morley’s Theorem
+  wiedijk_number: 84
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-085-divisibility-by-3-rule
+  title: Divisibility by 3 Rule
+  wiedijk_number: 85
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Nat.three_dvd_iff
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-086-lebesgue-measure-and-integration
+  title: Lebesgue Measure and Integration
+  wiedijk_number: 86
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: MeasureTheory.lintegral
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-087-desargues-s-theorem
+  title: Desargues’s Theorem
+  wiedijk_number: 87
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-088-derangements-formula
+  title: Derangements Formula
+  wiedijk_number: 88
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: card_derangements_eq_numDerangements
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: numDerangements_sum
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-089-the-factor-and-remainder-theorems
+  title: The Factor and Remainder Theorems
+  wiedijk_number: 89
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Polynomial.dvd_iff_isRoot
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: Polynomial.mod_X_sub_C_eq_C_eval
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-090-stirling-s-formula
+  title: Stirling’s Formula
+  wiedijk_number: 90
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Stirling.tendsto_stirlingSeq_sqrt_pi
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-091-the-triangle-inequality
+  title: The Triangle Inequality
+  wiedijk_number: 91
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: norm_add_le
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-092-pick-s-theorem
+  title: Pick’s Theorem
+  wiedijk_number: 92
+  informal_statement: null
+  msc_primary: null
+  status: open
+  alignments: []
+- slug: wiedijk-093-the-birthday-problem
+  title: The Birthday Problem
+  wiedijk_number: 93
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Theorems100.birthday
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: Theorems100.birthday_measure
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-094-the-law-of-cosines
+  title: The Law of Cosines
+  wiedijk_number: 94
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: EuclideanGeometry.dist_sq_eq_dist_sq_add_dist_sq_sub_two_mul_dist_mul_dist_mul_cos_angle
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-095-ptolemy-s-theorem
+  title: Ptolemy’s Theorem
+  wiedijk_number: 95
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: EuclideanGeometry.mul_dist_add_mul_dist_eq_mul_dist_of_cospherical
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-096-principle-of-inclusion-exclusion
+  title: Principle of Inclusion/Exclusion
+  wiedijk_number: 96
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Finset.inclusion_exclusion_sum_biUnion
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: Finset.inclusion_exclusion_card_biUnion
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: Finset.inclusion_exclusion_sum_inf_compl
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: Finset.inclusion_exclusion_card_inf_compl
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-097-cramer-s-rule
+  title: Cramer’s Rule
+  wiedijk_number: 97
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Matrix.mulVec_cramer
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-098-bertrand-s-postulate
+  title: Bertrand’s Postulate
+  wiedijk_number: 98
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Nat.bertrand
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decl
+- slug: wiedijk-099-buffon-needle-problem
+  title: Buffon Needle Problem
+  wiedijk_number: 99
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: BuffonsNeedle.buffon_short
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+  - library: mathlib
+    native_name: BuffonsNeedle.buffon_long
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
+- slug: wiedijk-100-descartes-rule-of-signs
+  title: Descartes Rule of Signs
+  wiedijk_number: 100
+  informal_statement: null
+  msc_primary: null
+  status: partially-formalized
+  alignments:
+  - library: mathlib
+    native_name: Polynomial.roots_countP_pos_le_signVariations
+    tier: CURATED
+    evidence:
+      source: mathlib4 docs/100.yaml
+      field: decls
