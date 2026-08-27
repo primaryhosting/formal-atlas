@@ -194,7 +194,7 @@ def main():
         description="Load a harvest output directory into Supabase")
     parser.add_argument("--dir", help="harvest output dir (statements.jsonl + manifest.json)")
     parser.add_argument("--allow-big-delta", action="store_true",
-                        help="override the ±20% count-delta gate")
+                        help="override the ±20%% count-delta gate")
     parser.add_argument("--record-failure", metavar="LIB",
                         help="record a failed harvest run for LIB and exit")
     parser.add_argument("--note", default="", help="note for --record-failure")
