@@ -1498,11 +1498,9 @@ concepts:
 - slug: wiedijk-099-buffon-needle-problem
   title: Buffon Needle Problem
   wiedijk_number: 99
-  informal_statement: If a needle of length ℓ is dropped uniformly at random onto
-    a plane ruled with parallel lines a distance d ≥ ℓ apart, the probability that
-    the needle crosses a line is 2ℓ/(πd); for a long needle (ℓ > d) the probability
-    is (2/π)(ℓ/d − √((ℓ/d)² − 1) + arccos(d/ℓ))... more precisely (2ℓ/(π d))(1 − √(1
-    − (d/ℓ)²)) + 1 − (2/π) arcsin(d/ℓ).
+  informal_statement: If a needle of length ℓ ≤ d is dropped uniformly at random onto
+    a plane ruled with parallel lines a distance d apart, the probability that the
+    needle crosses a line is 2ℓ/(πd).
   msc_primary: null
   status: partially-formalized
   alignments:
