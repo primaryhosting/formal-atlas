@@ -63,6 +63,12 @@ Three stages, three kinds of artifact:
                                   atlas/edition.py)
 ```
 
+Two further libraries follow the same funnel (the diagram shows the original
+three): **afp** (`isa-afp.org/entries/index.json`, entry-level — one row per
+whole AFP development) and **coq** (`rocq-prover.org/opam/released/index.tar.gz`,
+package-level — one row per opam package). Both emit `kind=other` rows that
+must never be counted alongside statement-level theorem counts.
+
 Everything above the Supabase box runs in GitHub Actions
 (`.github/workflows/harvest.yml` on a schedule, `edition.yml` weekly) or on a
 developer machine with the same commands. Nothing below the Supabase box has
@@ -103,7 +109,7 @@ touches the database.
 | `statement_text` | no (nullable) | The statement as the library states it, when the upstream export carries it. Metamath rows have the math string; mathlib's declaration export carries no statement text, so mathlib rows have `null` — stated, not papered over. |
 | `module` | no (nullable) | Positional context inside the library: a Mathlib module path, a set.mm chapter header. Whatever the library itself uses. |
 | `source_url` | yes | Deep link to the statement *in the library's own presentation* (schema-enforced `https://`). Provenance is a load-bearing feature: every atlas row can be checked against its source in one click. |
-| `subject_codes` | no (default `[]`) | Subject classification codes. How they were (or were not) derived is declared per-harvest in the manifest's `subject_derivation` — e.g. the brockian harvester currently declares "module prefix (not yet mapped to MSC)". |
+| `subject_codes` | no (default `[]`) | Subject classification codes. How they were (or were not) derived is declared per-harvest in the manifest's `subject_derivation` — e.g. the brockian harvester declares "MSC 2020 codes from registry module path via atlas.msc.brockian_msc prefix/segment table; unmapped modules carry no codes". |
 
 Rows are emitted sorted by `native_name` with sorted JSON keys, so
 `statements.jsonl` is deterministic for a given input: identical harvests are
@@ -316,8 +322,10 @@ to "formalized" is a curation judgment, not a script's; and
 
 Coverage is stated, not implied. A partial harvest says exactly what it
 covers: mathlib rows carry `statement_text: null` because the upstream
-export has none; the manifest's `subject_derivation` admits when subject
-codes are "not yet mapped to MSC"; unresolvable alignments are reported as
+export has none; the manifest's `subject_derivation` states exactly how far
+the subject-code mapping tables reach (unmapped modules carry no codes, and
+coq declares no subject taxonomy at package granularity at all);
+unresolvable alignments are reported as
 `PENDING`, never silently dropped or errored.
 
 The full epistemic framework — inclusion criteria, tier definitions, and
@@ -436,8 +444,8 @@ Not everything must ship in the first cut — but every deferral must be
 - No statement text in the upstream export → emit `statement_text: None`
   and say so in the module docstring (mathlib pattern).
 - Subject codes not yet derivable → empty `subject_codes` and a
-  `subject_derivation` string that says exactly that (brockian pattern:
-  "module prefix (not yet mapped to MSC)").
+  `subject_derivation` that says exactly that (coq pattern: `null`, with
+  the harvester noting there is no subject taxonomy at package granularity).
 - Can only harvest a subset (one archive section, one export flavor) →
   harvest the subset and state precisely what it covers. A partial harvest
   that declares its coverage is correct; a partial harvest presented as

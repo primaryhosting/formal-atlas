@@ -27,6 +27,8 @@ jobs:
           python harvesters/brockian/harvest.py --out out/brockian
           python harvesters/metamath/harvest.py --out out/metamath
           python harvesters/mathlib/harvest.py --out out/mathlib
+          python harvesters/afp/harvest.py --out out/afp
+          python harvesters/coq/harvest.py --out out/coq
       - name: Package edition tarball
         run: tar czf edition.tar.gz out/
       - name: Compute edition number
