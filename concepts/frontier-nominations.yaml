@@ -1,0 +1,1527 @@
+generated_by: tools/nominate_frontier.py
+generated_at: '2026-08-27T22:50:51.453999+00:00'
+spec: docs/2026-08-27-proving-flywheel-spec.md
+tier_table_version: 1
+note: 'Proposal document only — this tool never writes to the database. Nothing here
+  is approved: approvals are hand-recorded in concepts/campaign-approvals.yaml (the
+  Chris gate). Alignment counts are live measurements with CANDIDATE tier excluded.'
+counts:
+  mathematical_frontier: 81
+  formalization_frontier: 21
+  excluded: 23
+  cross_seed_duplicates: 1
+  tiers:
+    ENGINE-READY: 4
+    FORMALIZE-FIRST: 74
+    NOT-ATTACKABLE-YET: 3
+mathematical_frontier:
+- slug: target-020-brocard-s-problem
+  title: Brocard's Problem
+  seed_source: targets-board
+  tier: ENGINE-READY
+  sub_statement: 'The only n ≤ B with n! + 1 a perfect square are n ∈ {4, 5, 7}, for
+    an explicitly stated bound B: a per-n bounded verification whose certificate is
+    the checkable computation trace. The bound is part of the claim.'
+  engine: bounded verification (Brockian pipeline or AutoLab-driven solver)
+  certificate: per-n verification trace checked by an independent verifier
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: target-020-brocard-s-problem
+    tier_reason: curated table names a certifiable finite sub-statement
+    brockian_statement_module: Brockian.BrocardProblem
+- slug: target-084-ramsey-number-r-5-5
+  title: Ramsey Number R(5,5)
+  seed_source: targets-board
+  tier: ENGINE-READY
+  sub_statement: 'Bound work on R(5,5) (known window [43,46]): an UNSAT certificate
+    (DRAT or equivalent) for an explicit SAT encoding of a monochromatic-K5-free 2-coloring
+    of K_n at a stated n — the certified statement is the unsatisfiability of that
+    encoding, nothing more.'
+  engine: SAT solver with proof logging
+  certificate: DRAT/LRAT proof checked by a verified checker
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: target-084-ramsey-number-r-5-5
+    tier_reason: curated table names a certifiable finite sub-statement
+- slug: target-097-perfect-cuboid-euler-brick
+  title: Perfect Cuboid (Euler Brick)
+  seed_source: targets-board
+  tier: ENGINE-READY
+  sub_statement: 'No perfect cuboid exists with smallest edge ≤ B for an explicitly
+    stated bound B: exhaustive search over the bounded parameter space emitting a
+    certificate of exhaustion. The bound is part of the claim.'
+  engine: bounded exhaustive search (AutoLab-driven solver)
+  certificate: search-exhaustion trace checked by an independent verifier
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: target-097-perfect-cuboid-euler-brick
+    tier_reason: curated table names a certifiable finite sub-statement
+- slug: target-098-3-3-magic-square-of-squares
+  title: 3×3 Magic Square of Squares
+  seed_source: targets-board
+  tier: ENGINE-READY
+  sub_statement: 'No 3×3 magic square of nine distinct perfect squares exists with
+    all entries ≤ B² for an explicitly stated bound B: an exhaustive bounded search
+    over the parametrized candidate families, emitting a machine-checkable certificate
+    of exhaustion for that bound. The bound is part of the claim.'
+  engine: bounded exhaustive search (AutoLab-driven solver)
+  certificate: search-exhaustion trace checked by an independent verifier
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: target-098-3-3-magic-square-of-squares
+    tier_reason: curated table names a certifiable finite sub-statement
+- slug: target-008-goldbach-s-conjecture
+  title: Goldbach's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.GoldbachComb
+- slug: target-009-twin-prime-conjecture
+  title: Twin Prime Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.TwinPrimes
+- slug: target-010-legendre-s-conjecture
+  title: Legendre's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.LegendreConjecture
+- slug: target-011-landau-s-n-1-problem
+  title: Landau's n²+1 Problem
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.LandauNSquaredPlusOne
+- slug: target-012-collatz-conjecture
+  title: Collatz Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.CollatzPartial
+- slug: target-014-infinitude-of-even-perfect-numbers
+  title: Infinitude of Even Perfect Numbers
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.MersennePerfect
+- slug: target-015-infinitude-of-mersenne-primes
+  title: Infinitude of Mersenne Primes
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.MersennePerfect
+- slug: target-016-finiteness-of-fermat-primes
+  title: Finiteness of Fermat Primes
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.FermatNumbers
+- slug: target-017-polignac-s-conjecture
+  title: Polignac's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.PolignacPrimes
+- slug: target-018-infinitude-of-sophie-germain-primes
+  title: Infinitude of Sophie Germain Primes
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.SophieGermain
+- slug: target-019-andrica-s-conjecture
+  title: Andrica's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.AndricaConjecture
+- slug: target-021-oppermann-s-conjecture
+  title: Oppermann's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.OppermannConjecture
+- slug: target-022-gilbreath-s-conjecture
+  title: Gilbreath's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.GilbreathConjecture
+- slug: target-023-erd-s-straus-conjecture
+  title: Erdős–Straus Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.ErdosStraus
+- slug: target-024-fortune-s-conjecture
+  title: Fortune's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.FortunateNumbers
+- slug: target-025-sierpi-ski-problem
+  title: Sierpiński Problem
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.SierpinskiCovering
+- slug: target-026-riesel-problem
+  title: Riesel Problem
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.RieselCovering
+- slug: target-038-infinitude-of-amicable-pairs
+  title: Infinitude of Amicable Pairs
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.AmicableNumbers
+- slug: target-039-three-prime-carmichael-infinitude
+  title: Three-Prime Carmichael Infinitude
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.CarmichaelKorselt
+- slug: target-040-infinitude-of-wilson-primes
+  title: Infinitude of Wilson Primes
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.WilsonPrimes
+- slug: target-041-infinitude-of-repunit-primes
+  title: Infinitude of Repunit Primes
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.RepunitPrimes
+- slug: target-042-infinitude-of-palindromic-primes
+  title: Infinitude of Palindromic Primes
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.PalindromicPrimes
+- slug: target-095-prime-k-tuples-hardy-littlewood
+  title: Prime k-tuples (Hardy–Littlewood)
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.ConstellationWheel
+- slug: target-104-giuga-s-conjecture
+  title: Giuga's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: partially-formalized
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+    brockian_statement_module: Brockian.GiugaNumbers
+- slug: target-001-riemann-hypothesis
+  title: Riemann Hypothesis
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-002-p-versus-np
+  title: P versus NP
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-006-birch-swinnerton-dyer-conjecture
+  title: Birch & Swinnerton-Dyer Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-013-odd-perfect-number
+  title: Odd Perfect Number
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-027-cram-r-s-conjecture
+  title: Cramér's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-028-firoozbakht-s-conjecture
+  title: Firoozbakht's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-029-grimm-s-conjecture
+  title: Grimm's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-031-beal-s-conjecture
+  title: Beal's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-032-singmaster-s-conjecture
+  title: Singmaster's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-033-lonely-runner-conjecture
+  title: Lonely Runner Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-043-lehmer-s-totient-problem
+  title: Lehmer's Totient Problem
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-044-lehmer-s-mahler-measure-conjecture
+  title: Lehmer's Mahler-Measure Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-045-waring-goldbach-problems
+  title: Waring–Goldbach Problems
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-046-jacobian-conjecture
+  title: Jacobian Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-047-schanuel-s-conjecture
+  title: Schanuel's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-048-invariant-subspace-problem
+  title: Invariant Subspace Problem
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-049-littlewood-conjecture
+  title: Littlewood Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-050-bombieri-lang-conjecture
+  title: Bombieri–Lang Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-051-leopoldt-s-conjecture
+  title: Leopoldt's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-052-vandiver-s-conjecture
+  title: Vandiver's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-053-greenberg-s-conjecture
+  title: Greenberg's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-054-sendov-s-conjecture
+  title: Sendov's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-060-smooth-4-dimensional-poincar
+  title: Smooth 4-Dimensional Poincaré
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-061-grothendieck-standard-conjectures
+  title: Grothendieck Standard Conjectures
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-062-tate-conjecture
+  title: Tate Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-063-grothendieck-s-section-conjecture
+  title: Grothendieck's Section Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-064-novikov-conjecture
+  title: Novikov Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-065-baum-connes-conjecture
+  title: Baum–Connes Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-070-inscribed-square-toeplitz-problem
+  title: Inscribed Square (Toeplitz) Problem
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-071-moving-sofa-problem
+  title: Moving Sofa Problem
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-072-hadwiger-nelson-problem
+  title: Hadwiger–Nelson Problem
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-074-yau-s-conjectures-various
+  title: Yau's Conjectures (various)
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-075-hadwiger-conjecture
+  title: Hadwiger Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-076-union-closed-sets-frankl
+  title: Union-Closed Sets (Frankl)
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-077-1-3-2-3-conjecture
+  title: 1/3–2/3 Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-078-ryser-s-conjecture
+  title: Ryser's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-079-sunflower-conjecture
+  title: Sunflower Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-085-diagonal-ramsey-exponent
+  title: Diagonal Ramsey Exponent
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-086-various-erd-s-conjectures
+  title: Various Erdős Conjectures
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-087-caccetta-h-ggkvist-conjecture
+  title: Caccetta–Häggkvist Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-088-erd-s-tur-n-density-conjecture
+  title: Erdős–Turán (density) Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-092-existence-of-np-intermediate-problems
+  title: Existence of NP-Intermediate Problems
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-093-unique-games-conjecture
+  title: Unique Games Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-094-exponential-time-hypothesis
+  title: Exponential Time Hypothesis
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-096-gauss-class-number-problem
+  title: Gauss Class Number Problem
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-099-casas-alvero-conjecture
+  title: Casas-Alvero Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-100-nagata-s-conjecture
+  title: Nagata's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-101-hilbert-s-16th-problem
+  title: Hilbert's 16th Problem
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-102-dixmier-conjecture
+  title: Dixmier Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-103-zaremba-s-conjecture
+  title: Zaremba's Conjecture
+  seed_source: targets-board
+  tier: FORMALIZE-FIRST
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: default
+    tier_reason: first certifiable move is a precise formal statement (default tier
+      — not in either curated table)
+- slug: target-003-hodge-conjecture
+  title: Hodge Conjecture
+  seed_source: targets-board
+  tier: NOT-ATTACKABLE-YET
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: target-003-hodge-conjecture
+    tier_reason: 'beyond current engines: no certifiable finite sub-statement and
+      no settled formal-statement path in current libraries'
+- slug: target-004-navier-stokes-existence-smoothness
+  title: Navier–Stokes Existence & Smoothness
+  seed_source: targets-board
+  tier: NOT-ATTACKABLE-YET
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: target-004-navier-stokes-existence-smoothness
+    tier_reason: 'beyond current engines: the analytic setting (3D PDE existence/smoothness)
+      has no certifiable finite sub-statement and no settled formal-statement path
+      in current libraries'
+- slug: target-005-yang-mills-existence-mass-gap
+  title: Yang–Mills Existence & Mass Gap
+  seed_source: targets-board
+  tier: NOT-ATTACKABLE-YET
+  evidence:
+    seed_source: targets-board
+    board_status: open
+    atlas_status: open
+    alignment_count: 0
+    tier_table:
+      version: 1
+      matched: target-005-yang-mills-existence-mass-gap
+    tier_reason: 'beyond current engines: no agreed-upon rigorous formal statement
+      exists to formalize, let alone a certifiable finite sub-statement'
+formalization_frontier:
+- slug: wiedijk-005-prime-number-theorem
+  title: Prime Number Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 5
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-006-g-del-s-incompleteness-theorem
+  title: Gödel’s Incompleteness Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 6
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-008-the-impossibility-of-trisecting-the-angle-and-doubling-the-cube
+  title: The Impossibility of Trisecting the Angle and Doubling the Cube
+  seed_source: wiedijk100
+  wiedijk_number: 8
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-012-the-independence-of-the-parallel-postulate
+  title: The Independence of the Parallel Postulate
+  seed_source: wiedijk100
+  wiedijk_number: 12
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-013-polyhedron-formula
+  title: Polyhedron Formula
+  seed_source: wiedijk100
+  wiedijk_number: 13
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-021-green-s-theorem
+  title: Green’s Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 21
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-024-the-independence-of-the-continuum-hypothesis
+  title: The Independence of the Continuum Hypothesis
+  seed_source: wiedijk100
+  wiedijk_number: 24
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-028-pascal-s-hexagon-theorem
+  title: Pascal’s Hexagon Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 28
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-029-feuerbach-s-theorem
+  title: Feuerbach’s Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 29
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-031-ramsey-s-theorem
+  title: Ramsey’s Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 31
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-032-the-four-color-problem
+  title: The Four Color Problem
+  seed_source: wiedijk100
+  wiedijk_number: 32
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-036-brouwer-fixed-point-theorem
+  title: Brouwer Fixed Point Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 36
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-041-puiseux-s-theorem
+  title: Puiseux’s Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 41
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-043-the-isoperimetric-theorem
+  title: The Isoperimetric Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 43
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-050-the-number-of-platonic-solids
+  title: The Number of Platonic Solids
+  seed_source: wiedijk100
+  wiedijk_number: 50
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-053-pi-is-transcendental
+  title: Pi is Transcendental
+  seed_source: wiedijk100
+  wiedijk_number: 53
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-056-the-hermite-lindemann-transcendence-theorem
+  title: The Hermite-Lindemann Transcendence Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 56
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-067-e-is-transcendental
+  title: e is Transcendental
+  seed_source: wiedijk100
+  wiedijk_number: 67
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-084-morley-s-theorem
+  title: Morley’s Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 84
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-087-desargues-s-theorem
+  title: Desargues’s Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 87
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+- slug: wiedijk-092-pick-s-theorem
+  title: Pick’s Theorem
+  seed_source: wiedijk100
+  wiedijk_number: 92
+  goal: coverage — find or produce a recorded formalization of this PROVEN theorem;
+    never a campaign to prove it
+  evidence:
+    seed_source: wiedijk100
+    atlas_status: open
+    alignment_count: 0
+excluded:
+- slug: target-007-poincar-conjecture
+  title: Poincaré Conjecture
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-030-abc-conjecture
+  title: abc Conjecture
+  board_status: disputed
+  reason: board_status=disputed — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-034-weak-ternary-goldbach
+  title: Weak (Ternary) Goldbach
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-035-catalan-s-conjecture
+  title: Catalan's Conjecture
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-036-fermat-s-last-theorem
+  title: Fermat's Last Theorem
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+  cross_seed_duplicate:
+    slug: wiedijk-033-fermat-s-last-theorem
+    seed_source: wiedijk100
+    note: same concept by normalized title; the mathematical-frontier row wins — annotated
+      here, not listed twice
+- slug: target-037-erd-s-discrepancy-problem
+  title: Erdős Discrepancy Problem
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-055-kadison-singer-problem
+  title: Kadison–Singer Problem
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-056-gaussian-correlation-inequality
+  title: Gaussian Correlation Inequality
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-057-connes-embedding-problem
+  title: Connes' Embedding Problem
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-058-duffin-schaeffer-conjecture
+  title: Duffin–Schaeffer Conjecture
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-059-bieberbach-conjecture
+  title: Bieberbach Conjecture
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-066-willmore-conjecture
+  title: Willmore Conjecture
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-067-virtually-haken-conjecture
+  title: Virtually Haken Conjecture
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-068-kepler-conjecture
+  title: Kepler Conjecture
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-069-thurston-geometrization
+  title: Thurston Geometrization
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-073-borsuk-s-conjecture
+  title: Borsuk's Conjecture
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-080-erd-s-faber-lov-sz-conjecture
+  title: Erdős–Faber–Lovász Conjecture
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-081-ringel-s-conjecture
+  title: Ringel's Conjecture
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-082-four-color-theorem
+  title: Four Color Theorem
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-083-sensitivity-conjecture
+  title: Sensitivity Conjecture
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-089-continuum-hypothesis
+  title: Continuum Hypothesis
+  board_status: independent
+  reason: board_status=independent — never nominated (resolved/disputed/independent
+    problems are not open frontier)
+- slug: target-090-hilbert-s-tenth-problem
+  title: Hilbert's Tenth Problem
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
+- slug: target-091-generalized-collatz-undecidability
+  title: Generalized Collatz Undecidability
+  board_status: resolved
+  reason: board_status=resolved — never nominated (resolved/disputed/independent problems
+    are not open frontier)
